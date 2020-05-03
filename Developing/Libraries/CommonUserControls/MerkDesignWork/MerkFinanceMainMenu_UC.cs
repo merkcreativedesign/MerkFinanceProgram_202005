@@ -236,29 +236,29 @@ namespace CommonUserControls.MerkDesignWork
 
 		private void btnRawMaterialTransaction_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
 		{
-			BaseController<RawMaterialTranasction>.ShowControl(ref _rawMaterialTransactionEditorViewer,
-				ref _rawMaterialTransactionSearchViewer,
-				splitContainerControl2.Panel1,
-				EditorContainerType.Settings,
-				ViewerName.RawMaterialTransactions_viewer,
-				DB_CommonTransactionType.CreateNew,
-				"تسجيـــــل حـركــــة مــواد الخــــام",
-				AbstractViewerType.SearchViewer,
-				true);
+			//BaseController<RawMaterialTranasction>.ShowControl(ref _rawMaterialTransactionEditorViewer,
+			//	ref _rawMaterialTransactionSearchViewer,
+			//	splitContainerControl2.Panel1,
+			//	EditorContainerType.Settings,
+			//	ViewerName.RawMaterialTransactions_viewer,
+			//	DB_CommonTransactionType.CreateNew,
+			//	"تسجيـــــل حـركــــة مــواد الخــــام",
+			//	AbstractViewerType.SearchViewer,
+				//true);
 		}
 
 		private void btnGetRawMaterialCostPrices_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
 		{
-			BaseController<GetRawMaterialCostPrices_Result>.ShowSearchControl(ref _getRawMaterialCostPricesReport, this,
-				ViewerName.GetRawMaterialCostPrices_Viewer, DB_CommonTransactionType.SearchReport,
-				".... تقــريــــــر تكاليـــف المـــواد الخــــام .....", true, true);
+			//BaseController<GetRawMaterialCostPrices_Result>.ShowSearchControl(ref _getRawMaterialCostPricesReport, this,
+			//	ViewerName.GetRawMaterialCostPrices_Viewer, DB_CommonTransactionType.SearchReport,
+			//	".... تقــريــــــر تكاليـــف المـــواد الخــــام .....", true, true);
 		}
 
 		private void btnGetInventoryItemAreaParts_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
 		{
-			BaseController<GetInventoryItemAreaParts_Result>.ShowSearchControl(ref _getInventoryItemAreaPartsReport,
-				this, ViewerName.GetInventoryItemAreaParts_Viewer, DB_CommonTransactionType.SearchReport,
-				".... تقــريـــــر تقسيمـــات المنتجــــات .....", true, true);
+			//BaseController<GetInventoryItemAreaParts_Result>.ShowSearchControl(ref _getInventoryItemAreaPartsReport,
+			//	this, ViewerName.GetInventoryItemAreaParts_Viewer, DB_CommonTransactionType.SearchReport,
+			//	".... تقــريـــــر تقسيمـــات المنتجــــات .....", true, true);
 		}
 
 		private void btnInventoryItemPrinting_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
