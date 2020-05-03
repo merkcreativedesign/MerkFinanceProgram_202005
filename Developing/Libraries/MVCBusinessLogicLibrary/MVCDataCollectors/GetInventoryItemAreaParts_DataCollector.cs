@@ -57,10 +57,10 @@ namespace MVCBusinessLogicLibrary.MVCDataCollectors
 
 		public override object[] CollectSearchCriteria()
 		{
-			List<GetInventoryItemAreaParts_Result> list =
-				GetInventoryItemAreaParts_Result.GetItemsList((int?) InventoryItemID);
-			if (list != null)
-				return list.ToArray();
+			//List<GetInventoryItemAreaParts_Result> list =
+			//	GetInventoryItemAreaParts_Result.GetItemsList((int?) InventoryItemID);
+			//if (list != null)
+			//	return list.ToArray();
 			return null;
 		}
 

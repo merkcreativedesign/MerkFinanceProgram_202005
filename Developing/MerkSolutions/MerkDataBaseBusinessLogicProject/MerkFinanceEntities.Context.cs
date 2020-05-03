@@ -54,6 +54,7 @@ namespace MerkDataBaseBusinessLogicProject
         public virtual DbSet<Customer_cu> Customer_cu { get; set; }
         public virtual DbSet<CustomerPaymentTransaction> CustomerPaymentTransactions { get; set; }
         public virtual DbSet<CustomerType_p> CustomerType_p { get; set; }
+        public virtual DbSet<DailyTransactionType_p> DailyTransactionType_p { get; set; }
         public virtual DbSet<DBVersion> DBVersions { get; set; }
         public virtual DbSet<Department_cu> Department_cu { get; set; }
         public virtual DbSet<Department_JobTitle_cu> Department_JobTitle_cu { get; set; }
@@ -89,6 +90,7 @@ namespace MerkDataBaseBusinessLogicProject
         public virtual DbSet<EmploymentDate_cu> EmploymentDate_cu { get; set; }
         public virtual DbSet<EmploymentDateType_p> EmploymentDateType_p { get; set; }
         public virtual DbSet<Eye_p> Eye_p { get; set; }
+        public virtual DbSet<FinanceDailyTransaction> FinanceDailyTransactions { get; set; }
         public virtual DbSet<FinanceInvoice> FinanceInvoices { get; set; }
         public virtual DbSet<FinanceInvoiceDetail> FinanceInvoiceDetails { get; set; }
         public virtual DbSet<FinanceInvoicePayment> FinanceInvoicePayments { get; set; }

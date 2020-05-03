@@ -140,6 +140,9 @@
     <Compile Include="Customer_cu.cs">
       <DependentUpon>MerkFinanceEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="DailyTransactionType_p.cs">
+      <DependentUpon>MerkFinanceEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="DBVersion.cs">
       <DependentUpon>MerkFinanceEntities.tt</DependentUpon>
     </Compile>
@@ -262,6 +265,9 @@
     <Compile Include="EntitiesOperationsBusinessLogicLibrary\ReadyInvoicesForAction.cs" />
     <Compile Include="EntitiesOperationsBusinessLogicLibrary\UnitMeasurmentTreeLinkObject.cs" />
     <Compile Include="Eye_p.cs">
+      <DependentUpon>MerkFinanceEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FinanceDailyTransaction.cs">
       <DependentUpon>MerkFinanceEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="FinanceInvoice.cs">
@@ -629,6 +635,7 @@
     <Compile Include="MerkDataBaseBusinessLogic\MerkModelCreateor\PrivateEntities\CashBoxTransactionType_GeneralChartOfAccountType_p.cs" />
     <Compile Include="MerkDataBaseBusinessLogic\MerkModelCreateor\PrivateEntities\CashBoxTransactionType_p.cs" />
     <Compile Include="MerkDataBaseBusinessLogic\MerkModelCreateor\PrivateEntities\ChartOfAccountCodeMargin_p.cs" />
+    <Compile Include="MerkDataBaseBusinessLogic\MerkModelCreateor\PrivateEntities\DailyTransactionType_p.cs" />
     <Compile Include="MerkDataBaseBusinessLogic\MerkModelCreateor\PrivateEntities\DiabetedMedicationType_p.cs" />
     <Compile Include="MerkDataBaseBusinessLogic\MerkModelCreateor\PrivateEntities\DiabetesType_p.cs" />
     <Compile Include="MerkDataBaseBusinessLogic\MerkModelCreateor\PrivateEntities\DiagnosisType_p.cs" />
@@ -680,6 +687,7 @@
     <Compile Include="MerkDataBaseBusinessLogic\MerkModelCreateor\TransactionEntities\AccountingJournalEntryTransaction.cs" />
     <Compile Include="MerkDataBaseBusinessLogic\MerkModelCreateor\TransactionEntities\AccountingJournalTransaction.cs" />
     <Compile Include="MerkDataBaseBusinessLogic\MerkModelCreateor\TransactionEntities\CashBoxInOutTransaction.cs" />
+    <Compile Include="MerkDataBaseBusinessLogic\MerkModelCreateor\TransactionEntities\FinanceDailyTransaction.cs" />
     <Compile Include="MerkDataBaseBusinessLogic\MerkModelCreateor\TransactionEntities\FinanceInvoice.cs" />
     <Compile Include="MerkDataBaseBusinessLogic\MerkModelCreateor\TransactionEntities\FinanceInvoiceDetail.cs" />
     <Compile Include="MerkDataBaseBusinessLogic\MerkModelCreateor\TransactionEntities\FinanceInvoicePayment.cs" />

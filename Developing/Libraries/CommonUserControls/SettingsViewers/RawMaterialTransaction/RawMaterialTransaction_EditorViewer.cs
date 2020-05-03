@@ -14,9 +14,9 @@ using DB_RawMaterialTransactionType = MerkDataBaseBusinessLogicProject.EntitiesO
 namespace CommonUserControls.SettingsViewers.RawMaterialTransaction
 {
 	public partial class RawMaterialTransaction_EditorViewer : 
-		//UserControl
-		CommonAbstractEditorViewer<RawMaterialTranasction>,
-		IRawMaterialTransaction_Viewer
+		UserControl
+		//CommonAbstractEditorViewer<RawMaterialTranasction>,
+		//IRawMaterialTransaction_Viewer
 	{
 		private RawMaterial_EditorViewer _rawMaterialEditor;
 
@@ -48,36 +48,36 @@ namespace CommonUserControls.SettingsViewers.RawMaterialTransaction
 
 		#region Overrides of CommonAbstractViewer<RawMaterialTranasction>
 
-		public override IMVCController<RawMaterialTranasction> ViewerCollector { get; set; }
+		//public override IMVCController<RawMaterialTranasction> ViewerCollector { get; set; }
 
-		public override object ViewerID
-		{
-			get { return (int)ViewerName.RawMaterialTransactions_viewer; }
-		}
+		//public override object ViewerID
+		//{
+		//	get { return (int)ViewerName.RawMaterialTransactions_viewer; }
+		//}
 
-		public override string HeaderTitle
-		{
-			get { return "المنتجــــات"; }
-		}
+		//public override string HeaderTitle
+		//{
+		//	get { return "المنتجــــات"; }
+		//}
 
-		public override void FillControls()
-		{
-			CommonViewsActions.FillGridlookupEdit(lkeRawMaterial, RawMaterials_cu.ItemsList);
-			CommonViewsActions.FillGridlookupEdit(lkeColorID, Color_cu.ItemsList);
-			dtDate.EditValue = DateTime.Now;
-		}
+		//public override void FillControls()
+		//{
+		//	CommonViewsActions.FillGridlookupEdit(lkeRawMaterial, RawMaterials_cu.ItemsList);
+		//	CommonViewsActions.FillGridlookupEdit(lkeColorID, Color_cu.ItemsList);
+		//	dtDate.EditValue = DateTime.Now;
+		//}
 
-		public override void ClearControls()
-		{
-			lkeRawMaterial.EditValue = null;
-			spnHeight.EditValue = null;
-			spnCount.EditValue = null;
-			spnPrice.EditValue = null;
-			spnWidth.EditValue = null;
-			lkeColorID.EditValue = null;
-			dtDate.EditValue = DateTime.Now;
-			chkPurchasing.Checked = true;
-		}
+		//public override void ClearControls()
+		//{
+		//	lkeRawMaterial.EditValue = null;
+		//	spnHeight.EditValue = null;
+		//	spnCount.EditValue = null;
+		//	spnPrice.EditValue = null;
+		//	spnWidth.EditValue = null;
+		//	lkeColorID.EditValue = null;
+		//	dtDate.EditValue = DateTime.Now;
+		//	chkPurchasing.Checked = true;
+		//}
 
 		#endregion
 

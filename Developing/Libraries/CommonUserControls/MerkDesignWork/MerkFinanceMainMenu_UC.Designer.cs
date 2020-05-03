@@ -129,6 +129,7 @@
 			this.navBarGroup1.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
 			this.navBarGroup1.AppearancePressed.Options.UseFont = true;
 			this.navBarGroup1.Caption = "إعـــــدادات المخــــازن والمنتجــــــات";
+			this.navBarGroup1.Expanded = true;
 			this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.btnInventoryHousing),
             new DevExpress.XtraNavBar.NavBarItemLink(this.btnInventoryItemCategory),

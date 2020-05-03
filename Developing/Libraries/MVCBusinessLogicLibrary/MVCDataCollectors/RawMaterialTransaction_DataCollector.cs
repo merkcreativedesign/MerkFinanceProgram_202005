@@ -29,44 +29,44 @@ namespace MVCBusinessLogicLibrary.MVCDataCollectors
 			if (ActiveDBItem == null)
 				return false;
 
-			if (RawMaterialID != null)
-				((RawMaterialTranasction) ActiveDBItem).RawMaterial_CU_ID = Convert.ToInt32(RawMaterialID);
+			//if (RawMaterialID != null)
+			//	((RawMaterialTranasction) ActiveDBItem).RawMaterial_CU_ID = Convert.ToInt32(RawMaterialID);
 
-			if (RawTransactionTypeID != null)
-				((RawMaterialTranasction)ActiveDBItem).RawMaterialTransactionType_P_ID = Convert.ToInt32(RawTransactionTypeID);
+			//if (RawTransactionTypeID != null)
+			//	((RawMaterialTranasction)ActiveDBItem).RawMaterialTransactionType_P_ID = Convert.ToInt32(RawTransactionTypeID);
 
-			if (Count != null)
-				((RawMaterialTranasction)ActiveDBItem).Count = Convert.ToInt32(Count);
+			//if (Count != null)
+			//	((RawMaterialTranasction)ActiveDBItem).Count = Convert.ToInt32(Count);
 
-			if (PuchasingPrice != null)
-				((RawMaterialTranasction)ActiveDBItem).PuchasingPrice = Convert.ToDouble(PuchasingPrice);
+			//if (PuchasingPrice != null)
+			//	((RawMaterialTranasction)ActiveDBItem).PuchasingPrice = Convert.ToDouble(PuchasingPrice);
 
-			if (Width != null)
-				((RawMaterialTranasction)ActiveDBItem).Width = Convert.ToDouble(Width);
+			//if (Width != null)
+			//	((RawMaterialTranasction)ActiveDBItem).Width = Convert.ToDouble(Width);
 
-			if (Height != null)
-				((RawMaterialTranasction)ActiveDBItem).Height = Convert.ToDouble(Height);
+			//if (Height != null)
+			//	((RawMaterialTranasction)ActiveDBItem).Height = Convert.ToDouble(Height);
 
-			if (TransactionDate != null)
-				((RawMaterialTranasction)ActiveDBItem).Date = Convert.ToDateTime(TransactionDate);
+			//if (TransactionDate != null)
+			//	((RawMaterialTranasction)ActiveDBItem).Date = Convert.ToDateTime(TransactionDate);
 
-			if (DividedTypeID != null)
-				((RawMaterialTranasction)ActiveDBItem).DividedByType_P_ID = Convert.ToInt32(DividedTypeID);
+			//if (DividedTypeID != null)
+			//	((RawMaterialTranasction)ActiveDBItem).DividedByType_P_ID = Convert.ToInt32(DividedTypeID);
 
-			if (ColorID != null)
-				((RawMaterialTranasction)ActiveDBItem).Color_CU_ID = Convert.ToInt32(ColorID);
+			//if (ColorID != null)
+			//	((RawMaterialTranasction)ActiveDBItem).Color_CU_ID = Convert.ToInt32(ColorID);
 
-			if (UserID != null)
-				((RawMaterialTranasction)ActiveDBItem).InsertedBy = Convert.ToInt32(UserID);
+			//if (UserID != null)
+			//	((RawMaterialTranasction)ActiveDBItem).InsertedBy = Convert.ToInt32(UserID);
 
-			((RawMaterialTranasction)ActiveDBItem).IsOnDuty = true;
+			//((RawMaterialTranasction)ActiveDBItem).IsOnDuty = true;
 
-			switch (((IRawMaterialTransaction_Viewer)ActiveCollector.ActiveViewer).CommonTransactionType)
-			{
-				case DB_CommonTransactionType.DeleteExisting:
-					((RawMaterialTranasction)ActiveDBItem).IsOnDuty = false;
-					break;
-			}
+			//switch (((IRawMaterialTransaction_Viewer)ActiveCollector.ActiveViewer).CommonTransactionType)
+			//{
+			//	case DB_CommonTransactionType.DeleteExisting:
+			//		((RawMaterialTranasction)ActiveDBItem).IsOnDuty = false;
+			//		break;
+			//}
 
 			RelatedViewers = ((IRawMaterialTransaction_Viewer)ActiveCollector.ActiveViewer).RelatedViewers;
 
@@ -121,19 +121,20 @@ namespace MVCBusinessLogicLibrary.MVCDataCollectors
 
 		public override object[] CollectSearchCriteria()
 		{
-			List<RawMaterialTranasction> list = RawMaterialTranasction.ItemsList.FindAll(item => item.IsOnDuty);
-			return list.ToArray();
+			//List<RawMaterialTranasction> list = RawMaterialTranasction.ItemsList.FindAll(item => item.IsOnDuty);
+			//return list.ToArray();
+		    return null;
 		}
 
 		public override bool CreateNew()
 		{
-			if (ActiveDBItem == null)
-			{
-				ActiveDBItem = DBCommon.CreateNewDBEntity<RawMaterialTranasction>();
+			//if (ActiveDBItem == null)
+			//{
+			//	ActiveDBItem = DBCommon.CreateNewDBEntity<RawMaterialTranasction>();
 
-				((IRawMaterialTransaction_Viewer)ActiveCollector.ActiveViewer).CommonTransactionType = DB_CommonTransactionType.SaveNew;
-				return true;
-			}
+			//	((IRawMaterialTransaction_Viewer)ActiveCollector.ActiveViewer).CommonTransactionType = DB_CommonTransactionType.SaveNew;
+			//	return true;
+			//}
 			return false;
 		}
 
@@ -142,34 +143,35 @@ namespace MVCBusinessLogicLibrary.MVCDataCollectors
 			if (ActiveCollector.ActiveDBItem == null)
 				return false;
 
-			if (((RawMaterialTranasction)ActiveCollector.ActiveDBItem).SaveChanges())
-			{
-				((RawMaterialTranasction)ActiveCollector.ActiveDBItem).LoadItemsList();
-				return true;
-			}
+			//if (((RawMaterialTranasction)ActiveCollector.ActiveDBItem).SaveChanges())
+			//{
+			//	((RawMaterialTranasction)ActiveCollector.ActiveDBItem).LoadItemsList();
+			//	return true;
+			//}
 
 			return false;
 		}
 
 		public override void Edit(IDBCommon entity)
 		{
-			RawMaterialID = ((RawMaterialTranasction)ActiveDBItem).RawMaterial_CU_ID;
-			RawTransactionTypeID = ((RawMaterialTranasction)ActiveDBItem).RawMaterialTransactionType_P_ID;
-			Count = ((RawMaterialTranasction)ActiveDBItem).Count;
-			PuchasingPrice = ((RawMaterialTranasction)ActiveDBItem).PuchasingPrice;
-			Width = ((RawMaterialTranasction)ActiveDBItem).Width;
-			Height = ((RawMaterialTranasction)ActiveDBItem).Height;
-			TransactionDate = ((RawMaterialTranasction)ActiveDBItem).Date;
+			//RawMaterialID = ((RawMaterialTranasction)ActiveDBItem).RawMaterial_CU_ID;
+			//RawTransactionTypeID = ((RawMaterialTranasction)ActiveDBItem).RawMaterialTransactionType_P_ID;
+			//Count = ((RawMaterialTranasction)ActiveDBItem).Count;
+			//PuchasingPrice = ((RawMaterialTranasction)ActiveDBItem).PuchasingPrice;
+			//Width = ((RawMaterialTranasction)ActiveDBItem).Width;
+			//Height = ((RawMaterialTranasction)ActiveDBItem).Height;
+			//TransactionDate = ((RawMaterialTranasction)ActiveDBItem).Date;
 
-			((IRawMaterialTransaction_Viewer)ActiveCollector.ActiveViewer).ID = ((RawMaterialTranasction)ActiveDBItem).ID;
-			ActiveCollector.ActiveDBItem.ID = ((RawMaterialTranasction)ActiveDBItem).ID;
+			//((IRawMaterialTransaction_Viewer)ActiveCollector.ActiveViewer).ID = ((RawMaterialTranasction)ActiveDBItem).ID;
+			//ActiveCollector.ActiveDBItem.ID = ((RawMaterialTranasction)ActiveDBItem).ID;
 
 			base.Edit(ActiveCollector.ActiveDBItem);
 		}
 
 		public override bool Delete(IDBCommon entity)
 		{
-			return ((RawMaterialTranasction)entity).RemoveItem();
+			//return ((RawMaterialTranasction)entity).RemoveItem();
+		    return false;
 		}
 
 		#endregion

@@ -57,10 +57,10 @@ namespace MVCBusinessLogicLibrary.MVCDataCollectors
 
 		public override object[] CollectSearchCriteria()
 		{
-			List<GetRawMaterialCostPrices_Result> list =
-				GetRawMaterialCostPrices_Result.GetItemsList((int?)RawMaterialID, (DateTime?)FromDate, (DateTime?)ToDate, (int?)UserID);
-			if (list != null)
-				return list.ToArray();
+			//List<GetRawMaterialCostPrices_Result> list =
+			//	GetRawMaterialCostPrices_Result.GetItemsList((int?)RawMaterialID, (DateTime?)FromDate, (DateTime?)ToDate, (int?)UserID);
+			//if (list != null)
+			//	return list.ToArray();
 			return null;
 		}
 

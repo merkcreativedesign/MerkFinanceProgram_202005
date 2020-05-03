@@ -9,9 +9,9 @@ using MVCBusinessLogicLibrary.Viewers;
 namespace CommonUserControls.SettingsViewers.RawMaterialTransaction
 {
 	public partial class RawMaterialTransaction_SearchViewer : 
-		//UserControl
-		CommonAbstractSearchViewer<RawMaterialTranasction>,
-		IRawMaterialTransaction_Viewer
+		UserControl
+		//CommonAbstractSearchViewer<RawMaterialTranasction>,
+		//IRawMaterialTransaction_Viewer
 	{
 		public RawMaterialTransaction_SearchViewer()
 		{
@@ -24,20 +24,20 @@ namespace CommonUserControls.SettingsViewers.RawMaterialTransaction
 
 		#region Overrides of CommonAbstractViewer<RawMaterialTranasction>
 
-		public override object ViewerID
-		{
-			get { return (int)ViewerName.RawMaterialTransactions_viewer; }
-		}
+		//public override object ViewerID
+		//{
+		//	get { return (int)ViewerName.RawMaterialTransactions_viewer; }
+		//}
 
-		public override string HeaderTitle
-		{
-			get { return "المنتجــــات"; }
-		}
+		//public override string HeaderTitle
+		//{
+		//	get { return "المنتجــــات"; }
+		//}
 
-		public override string GridXML
-		{
-			get { return Resources.LocalizedRes.grd_RawMaterialTransaction_SearchViewer; }
-		}
+		//public override string GridXML
+		//{
+		//	get { return Resources.LocalizedRes.grd_RawMaterialTransaction_SearchViewer; }
+		//}
 
 		#endregion
 

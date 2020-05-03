@@ -137,6 +137,7 @@
     <Compile Include="MVCDataCollectors\DoctorCategory_DataCollector.cs" />
     <Compile Include="MVCDataCollectors\Doctor_DataCollector.cs" />
     <Compile Include="MVCDataCollectors\Dose_DataCollector.cs" />
+    <Compile Include="MVCDataCollectors\FinanceDailyTransaction_DataCollector.cs" />
     <Compile Include="MVCDataCollectors\FinanceInvoiceCreationDataCollector.cs" />
     <Compile Include="MVCDataCollectors\Floor_DataCollector.cs" />
     <Compile Include="MVCDataCollectors\GeneralChartOfAccountType_DataCollector.cs" />
@@ -218,6 +219,7 @@
     <Compile Include="Viewers\IDoctorCategoryViewer.cs" />
     <Compile Include="Viewers\IDoctorViewer.cs" />
     <Compile Include="Viewers\IDose_Viewer.cs" />
+    <Compile Include="Viewers\IFinanceDailyTransactionViewer.cs" />
     <Compile Include="Viewers\IFinanceInvoiceCreation.cs" />
     <Compile Include="Viewers\IFloorViewer.cs" />
     <Compile Include="Viewers\IGeneralChartOfAccountTypeViewer.cs" />

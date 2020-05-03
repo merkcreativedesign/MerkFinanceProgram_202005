@@ -11,9 +11,9 @@ using MVCBusinessLogicLibrary.Viewers;
 namespace CommonUserControls.ReportsContainer
 {
 	public partial class GetRawMaterialCostPrices_Report : 
-		//UserControl
-		CommonAbstractSearchViewer<GetRawMaterialCostPrices_Result>,
-		IGetRawMaterialCostPrices_Report_Viewer
+		UserControl
+		//CommonAbstractSearchViewer<GetRawMaterialCostPrices_Result>,
+		//IGetRawMaterialCostPrices_Report_Viewer
 	{
 		public GetRawMaterialCostPrices_Report()
 		{
@@ -33,37 +33,37 @@ namespace CommonUserControls.ReportsContainer
 
 		#region Overrides of CommonAbstractViewer<GetRawMaterialCostPrices_Result>
 
-		public override object ViewerID
-		{
-			get { return (int)ViewerName.GetRawMaterialCostPrices_Viewer; }
-		}
+		//public override object ViewerID
+		//{
+		//	get { return (int)ViewerName.GetRawMaterialCostPrices_Viewer; }
+		//}
 
-		public override string HeaderTitle
-		{
-			get { return string.Empty; }
-		}
+		//public override string HeaderTitle
+		//{
+		//	get { return string.Empty; }
+		//}
 
-		public override string GridXML
-		{
-			get
-			{
-				return Resources.LocalizedRes.grd_GetRawMaterialCostPrices;
-			}
-		}
+		//public override string GridXML
+		//{
+		//	get
+		//	{
+		//		return Resources.LocalizedRes.grd_GetRawMaterialCostPrices;
+		//	}
+		//}
 
-		public override void FillControls()
-		{
-			CommonViewsActions.FillGridlookupEdit(lkeUsers, User_cu.ItemsList, "FullName", "Person_CU_ID");
-			CommonViewsActions.FillGridlookupEdit(lkeRawMaterials, RawMaterials_cu.ItemsList, "RawMaterialFullName");
-		}
+		//public override void FillControls()
+		//{
+		//	CommonViewsActions.FillGridlookupEdit(lkeUsers, User_cu.ItemsList, "FullName", "Person_CU_ID");
+		//	CommonViewsActions.FillGridlookupEdit(lkeRawMaterials, RawMaterials_cu.ItemsList, "RawMaterialFullName");
+		//}
 
-		public override void ClearControls()
-		{
-			lkeRawMaterials.EditValue = null;
-			dtDateFrom.EditValue = null;
-			dtDateTo.EditValue = null;
-			lkeUsers.EditValue = null;
-		}
+		//public override void ClearControls()
+		//{
+		//	lkeRawMaterials.EditValue = null;
+		//	dtDateFrom.EditValue = null;
+		//	dtDateTo.EditValue = null;
+		//	lkeUsers.EditValue = null;
+		//}
 
 		#endregion
 

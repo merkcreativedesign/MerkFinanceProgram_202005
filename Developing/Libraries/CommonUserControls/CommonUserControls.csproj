@@ -227,6 +227,12 @@
     <Compile Include="InvoiceViewers\ReadyInvoiceForPayments_UC.Designer.cs">
       <DependentUpon>ReadyInvoiceForPayments_UC.cs</DependentUpon>
     </Compile>
+    <Compile Include="MerkDesignWork\MerkFinanceParentMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MerkDesignWork\MerkFinanceParentMenu.Designer.cs">
+      <DependentUpon>MerkFinanceParentMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="MerkDesignWork\ReviewInventoryItemsDetails_UC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -268,6 +274,18 @@
     </Compile>
     <Compile Include="SettingsViewers\Color_Viewers\Color_SearchViewer.Designer.cs">
       <DependentUpon>Color_SearchViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsViewers\FinanceDailyTransactionViewers\FinanceDailyTransaction_EditorViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SettingsViewers\FinanceDailyTransactionViewers\FinanceDailyTransaction_EditorViewer.Designer.cs">
+      <DependentUpon>FinanceDailyTransaction_EditorViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsViewers\FinanceDailyTransactionViewers\FinanceDailyTransaction_SearchViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SettingsViewers\FinanceDailyTransactionViewers\FinanceDailyTransaction_SearchViewer.Designer.cs">
+      <DependentUpon>FinanceDailyTransaction_SearchViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="SettingsViewers\InventoryItem_Area_Viewers\InventoryItem_Area_EditorViewer.cs">
       <SubType>UserControl</SubType>
@@ -1426,6 +1444,9 @@
     <EmbeddedResource Include="InvoiceViewers\ReadyInvoiceForPayments_UC.resx">
       <DependentUpon>ReadyInvoiceForPayments_UC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MerkDesignWork\MerkFinanceParentMenu.resx">
+      <DependentUpon>MerkFinanceParentMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MerkDesignWork\ReviewInventoryItemsDetails_UC.resx">
       <DependentUpon>ReviewInventoryItemsDetails_UC.cs</DependentUpon>
     </EmbeddedResource>
@@ -1446,6 +1467,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SettingsViewers\Color_Viewers\Color_SearchViewer.resx">
       <DependentUpon>Color_SearchViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsViewers\FinanceDailyTransactionViewers\FinanceDailyTransaction_EditorViewer.resx">
+      <DependentUpon>FinanceDailyTransaction_EditorViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsViewers\FinanceDailyTransactionViewers\FinanceDailyTransaction_SearchViewer.resx">
+      <DependentUpon>FinanceDailyTransaction_SearchViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SettingsViewers\InventoryItem_Area_Viewers\InventoryItem_Area_EditorViewer.resx">
       <DependentUpon>InventoryItem_Area_EditorViewer.cs</DependentUpon>
@@ -2011,6 +2038,8 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\grd_FinanceDailyTransaction_SearchViewer.xml" />
+    <None Include="Resources\lyt_FinanceDailyTransaction_EditorViewer.xml" />
     <None Include="Resources\lyt_ReviewInventoryItemsDetails_UC.xml" />
     <None Include="Resources\grd_ReviewInventoryItemCostDetails_Printing_Viewer.xml" />
     <None Include="Resources\grd_ReviewInventoryItemCostDetails_Area_Viewer.xml" />

@@ -483,7 +483,10 @@
 		InventoryItem_Printing_cu,
 		InventoryItem_RawMaterial_cu,
 		SizeUnitMeasure_p,
-		InventoryItem_Color_cu
+		InventoryItem_Color_cu,
+		LoggingHistory,
+		FinanceDailyTransaction,
+		DailyTransactionType_p
 	}
 
 	public enum DB_Station

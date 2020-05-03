@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="MerkFinanceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="MerkFinanceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AccountingJournalEntryTransaction">
           <Key>
             <PropertyRef Name="ID" />
@@ -332,6 +332,15 @@
           <Property Name="Name_P" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="Name_S" Type="nvarchar" MaxLength="150" />
           <Property Name="Description" Type="ntext" />
+        </EntityType>
+        <EntityType Name="DailyTransactionType_p">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name_P" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name_S" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="DBVersion">
           <Key>
@@ -711,6 +720,18 @@
           <Property Name="Name_S" Type="nvarchar" MaxLength="50" />
           <Property Name="Description" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="FinanceDailyTransaction">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Amount" Type="float" Nullable="false" />
+          <Property Name="DailyTransactionType_P_ID" Type="int" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="300" />
+          <Property Name="IsOnDuty" Type="bit" Nullable="false" />
+          <Property Name="InsertedBy" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="FinanceInvoice">
           <Key>
             <PropertyRef Name="ID" />
@@ -1067,7 +1088,7 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="InventoryItemID" Type="int" Nullable="false" />
-          <Property Name="SizeUnitMeasure_P_ID" Type="int" />
+          <Property Name="SizeUnitMeasure_P_ID" Type="int" Nullable="false" />
           <Property Name="Width" Type="float" Nullable="false" />
           <Property Name="Height" Type="float" Nullable="false" />
           <Property Name="Count" Type="float" Nullable="false" />
@@ -4669,6 +4690,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_FinanceDailyTransaction_DailyTransactionType_p">
+          <End Role="DailyTransactionType_p" Type="Self.DailyTransactionType_p" Multiplicity="1" />
+          <End Role="FinanceDailyTransaction" Type="Self.FinanceDailyTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DailyTransactionType_p">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FinanceDailyTransaction">
+              <PropertyRef Name="DailyTransactionType_P_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FinanceDailyTransaction_User_cu">
+          <End Role="User_cu" Type="Self.User_cu" Multiplicity="1" />
+          <End Role="FinanceDailyTransaction" Type="Self.FinanceDailyTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_cu">
+              <PropertyRef Name="Person_CU_ID" />
+            </Principal>
+            <Dependent Role="FinanceDailyTransaction">
+              <PropertyRef Name="InsertedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_FinanceInvoice_FinanceInvoice">
           <End Role="Customer_cu" Type="Self.Customer_cu" Multiplicity="0..1" />
           <End Role="FinanceInvoice" Type="Self.FinanceInvoice" Multiplicity="*" />
@@ -5342,7 +5387,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_InventoryItem_Area_SizeUnitMeasure_p">
-          <End Role="SizeUnitMeasure_p" Type="Self.SizeUnitMeasure_p" Multiplicity="0..1" />
+          <End Role="SizeUnitMeasure_p" Type="Self.SizeUnitMeasure_p" Multiplicity="1" />
           <End Role="InventoryItem_Area" Type="Self.InventoryItem_Area" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="SizeUnitMeasure_p">
@@ -9830,6 +9875,7 @@
         <Function Name="GetDoctorFullName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="nvarchar">
           <Parameter Name="DoctorID" Type="int" Mode="In" />
         </Function>
+        <Function Name="GetFinanceDailyTransactionCount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
         <Function Name="GetInvoiceForAddmission" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="InvoiceCreationDateStart" Type="datetime" Mode="In" />
           <Parameter Name="InvoiceCreationDateEnd" Type="datetime" Mode="In" />
@@ -9967,6 +10013,7 @@
           <EntitySet Name="Customer_cu" EntityType="Self.Customer_cu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CustomerPaymentTransaction" EntityType="Self.CustomerPaymentTransaction" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CustomerType_p" EntityType="Self.CustomerType_p" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DailyTransactionType_p" EntityType="Self.DailyTransactionType_p" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DBVersion" EntityType="Self.DBVersion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Department_cu" EntityType="Self.Department_cu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Department_JobTitle_cu" EntityType="Self.Department_JobTitle_cu" Schema="dbo" store:Type="Tables" />
@@ -10002,6 +10049,7 @@
           <EntitySet Name="EmploymentDate_cu" EntityType="Self.EmploymentDate_cu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EmploymentDateType_p" EntityType="Self.EmploymentDateType_p" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Eye_p" EntityType="Self.Eye_p" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FinanceDailyTransaction" EntityType="Self.FinanceDailyTransaction" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FinanceInvoice" EntityType="Self.FinanceInvoice" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FinanceInvoiceDetail" EntityType="Self.FinanceInvoiceDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FinanceInvoicePayment" EntityType="Self.FinanceInvoicePayment" Schema="dbo" store:Type="Tables" />
@@ -10710,6 +10758,14 @@
           <AssociationSet Name="FK_EmploymentDate_cu_User_cu" Association="Self.FK_EmploymentDate_cu_User_cu">
             <End Role="User_cu" EntitySet="User_cu" />
             <End Role="EmploymentDate_cu" EntitySet="EmploymentDate_cu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FinanceDailyTransaction_DailyTransactionType_p" Association="Self.FK_FinanceDailyTransaction_DailyTransactionType_p">
+            <End Role="DailyTransactionType_p" EntitySet="DailyTransactionType_p" />
+            <End Role="FinanceDailyTransaction" EntitySet="FinanceDailyTransaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FinanceDailyTransaction_User_cu" Association="Self.FK_FinanceDailyTransaction_User_cu">
+            <End Role="User_cu" EntitySet="User_cu" />
+            <End Role="FinanceDailyTransaction" EntitySet="FinanceDailyTransaction" />
           </AssociationSet>
           <AssociationSet Name="FK_FinanceInvoice_FinanceInvoice" Association="Self.FK_FinanceInvoice_FinanceInvoice">
             <End Role="Customer_cu" EntitySet="Customer_cu" />
@@ -12424,8 +12480,7 @@
             <End Role="WorkingShiftTitle_cu" EntitySet="WorkingShiftTitle_cu" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MerkFinanceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -12877,6 +12932,16 @@
           <Property Name="Name_S" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Customer_cu" Relationship="Self.FK_Customer_cu_CustomerType_p" FromRole="CustomerType_p" ToRole="Customer_cu" />
+        </EntityType>
+        <EntityType Name="DailyTransactionType_p">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name_P" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name_S" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="FinanceDailyTransactions" Relationship="Self.FK_FinanceDailyTransaction_DailyTransactionType_p" FromRole="DailyTransactionType_p" ToRole="FinanceDailyTransaction" />
         </EntityType>
         <EntityType Name="DBVersion">
           <Key>
@@ -13376,6 +13441,20 @@
           <NavigationProperty Name="VisitTiming_EOMSign" Relationship="Self.FK_VisitTiming_EOMSign_Eye_p" FromRole="Eye_p" ToRole="VisitTiming_EOMSign" />
           <NavigationProperty Name="VisitTiming_PosteriorSegmentSign" Relationship="Self.FK_VisitTiming_PosteriorSegmentSign_Eye_p" FromRole="Eye_p" ToRole="VisitTiming_PosteriorSegmentSign" />
         </EntityType>
+        <EntityType Name="FinanceDailyTransaction">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Amount" Type="Double" Nullable="false" />
+          <Property Name="DailyTransactionType_P_ID" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="IsOnDuty" Type="Boolean" Nullable="false" />
+          <Property Name="InsertedBy" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DailyTransactionType_p" Relationship="Self.FK_FinanceDailyTransaction_DailyTransactionType_p" FromRole="FinanceDailyTransaction" ToRole="DailyTransactionType_p" />
+          <NavigationProperty Name="User_cu" Relationship="Self.FK_FinanceDailyTransaction_User_cu" FromRole="FinanceDailyTransaction" ToRole="User_cu" />
+        </EntityType>
         <EntityType Name="FinanceInvoice">
           <Key>
             <PropertyRef Name="ID" />
@@ -13836,7 +13915,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="InventoryItemID" Type="Int32" Nullable="false" />
-          <Property Name="SizeUnitMeasure_P_ID" Type="Int32" />
+          <Property Name="SizeUnitMeasure_P_ID" Type="Int32" Nullable="false" />
           <Property Name="Width" Type="Double" Nullable="false" />
           <Property Name="Height" Type="Double" Nullable="false" />
           <Property Name="Count" Type="Double" Nullable="false" />
@@ -15855,6 +15934,7 @@
           <NavigationProperty Name="Employee_WorkingShiftTitle_cu" Relationship="Self.FK_Employee_WorkingShiftTitle_cu_User_cu" FromRole="User_cu" ToRole="Employee_WorkingShiftTitle_cu" />
           <NavigationProperty Name="EmployeeType_cu" Relationship="Self.FK_EmployeeType_cu_User_cu" FromRole="User_cu" ToRole="EmployeeType_cu" />
           <NavigationProperty Name="EmploymentDate_cu" Relationship="Self.FK_EmploymentDate_cu_User_cu" FromRole="User_cu" ToRole="EmploymentDate_cu" />
+          <NavigationProperty Name="FinanceDailyTransactions" Relationship="Self.FK_FinanceDailyTransaction_User_cu" FromRole="User_cu" ToRole="FinanceDailyTransaction" />
           <NavigationProperty Name="FinanceInvoices" Relationship="Self.FK_FinanceInvoice_User_cu" FromRole="User_cu" ToRole="FinanceInvoice" />
           <NavigationProperty Name="FinanceInvoicePayments" Relationship="Self.FK_FinanceInvoicePayment_User_cu" FromRole="User_cu" ToRole="FinanceInvoicePayment" />
           <NavigationProperty Name="FinanceInvoiceShares" Relationship="Self.FK_FinanceInvoiceShare_User_cu" FromRole="User_cu" ToRole="FinanceInvoiceShare" />
@@ -17765,6 +17845,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_FinanceDailyTransaction_DailyTransactionType_p">
+          <End Role="DailyTransactionType_p" Type="Self.DailyTransactionType_p" Multiplicity="1" />
+          <End Role="FinanceDailyTransaction" Type="Self.FinanceDailyTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DailyTransactionType_p">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FinanceDailyTransaction">
+              <PropertyRef Name="DailyTransactionType_P_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Department_cu_Department_cu">
           <End Role="Department_cu" Type="Self.Department_cu" Multiplicity="0..1" />
           <End Role="Department_cu1" Type="Self.Department_cu" Multiplicity="*" />
@@ -18881,6 +18973,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_FinanceDailyTransaction_User_cu">
+          <End Role="User_cu" Type="Self.User_cu" Multiplicity="1" />
+          <End Role="FinanceDailyTransaction" Type="Self.FinanceDailyTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_cu">
+              <PropertyRef Name="Person_CU_ID" />
+            </Principal>
+            <Dependent Role="FinanceDailyTransaction">
+              <PropertyRef Name="InsertedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_FinanceInvoice_InvoicePaymentType_p">
           <End Role="InvoicePaymentType_p" Type="Self.InvoicePaymentType_p" Multiplicity="1" />
           <End Role="FinanceInvoice" Type="Self.FinanceInvoice" Multiplicity="*" />
@@ -19698,7 +19802,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_InventoryItem_Area_SizeUnitMeasure_p">
-          <End Role="SizeUnitMeasure_p" Type="Self.SizeUnitMeasure_p" Multiplicity="0..1" />
+          <End Role="SizeUnitMeasure_p" Type="Self.SizeUnitMeasure_p" Multiplicity="1" />
           <End Role="InventoryItem_Area" Type="Self.InventoryItem_Area" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="SizeUnitMeasure_p">
@@ -23373,6 +23477,7 @@
           <EntitySet Name="Customer_cu" EntityType="Self.Customer_cu" />
           <EntitySet Name="CustomerPaymentTransactions" EntityType="Self.CustomerPaymentTransaction" />
           <EntitySet Name="CustomerType_p" EntityType="Self.CustomerType_p" />
+          <EntitySet Name="DailyTransactionType_p" EntityType="Self.DailyTransactionType_p" />
           <EntitySet Name="DBVersions" EntityType="Self.DBVersion" />
           <EntitySet Name="Department_cu" EntityType="Self.Department_cu" />
           <EntitySet Name="Department_JobTitle_cu" EntityType="Self.Department_JobTitle_cu" />
@@ -23408,6 +23513,7 @@
           <EntitySet Name="EmploymentDate_cu" EntityType="Self.EmploymentDate_cu" />
           <EntitySet Name="EmploymentDateType_p" EntityType="Self.EmploymentDateType_p" />
           <EntitySet Name="Eye_p" EntityType="Self.Eye_p" />
+          <EntitySet Name="FinanceDailyTransactions" EntityType="Self.FinanceDailyTransaction" />
           <EntitySet Name="FinanceInvoices" EntityType="Self.FinanceInvoice" />
           <EntitySet Name="FinanceInvoiceDetails" EntityType="Self.FinanceInvoiceDetail" />
           <EntitySet Name="FinanceInvoicePayments" EntityType="Self.FinanceInvoicePayment" />
@@ -23969,6 +24075,10 @@
             <End Role="User_cu" EntitySet="User_cu" />
             <End Role="CustomerPaymentTransaction" EntitySet="CustomerPaymentTransactions" />
           </AssociationSet>
+          <AssociationSet Name="FK_FinanceDailyTransaction_DailyTransactionType_p" Association="Self.FK_FinanceDailyTransaction_DailyTransactionType_p">
+            <End Role="DailyTransactionType_p" EntitySet="DailyTransactionType_p" />
+            <End Role="FinanceDailyTransaction" EntitySet="FinanceDailyTransactions" />
+          </AssociationSet>
           <AssociationSet Name="FK_Department_cu_Department_cu" Association="Self.FK_Department_cu_Department_cu">
             <End Role="Department_cu" EntitySet="Department_cu" />
             <End Role="Department_cu1" EntitySet="Department_cu" />
@@ -24340,6 +24450,10 @@
           <AssociationSet Name="FK_VisitTiming_PosteriorSegmentSign_Eye_p" Association="Self.FK_VisitTiming_PosteriorSegmentSign_Eye_p">
             <End Role="Eye_p" EntitySet="Eye_p" />
             <End Role="VisitTiming_PosteriorSegmentSign" EntitySet="VisitTiming_PosteriorSegmentSign" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FinanceDailyTransaction_User_cu" Association="Self.FK_FinanceDailyTransaction_User_cu">
+            <End Role="User_cu" EntitySet="User_cu" />
+            <End Role="FinanceDailyTransaction" EntitySet="FinanceDailyTransactions" />
           </AssociationSet>
           <AssociationSet Name="FK_FinanceInvoice_InvoicePaymentType_p" Association="Self.FK_FinanceInvoice_InvoicePaymentType_p">
             <End Role="InvoicePaymentType_p" EntitySet="InvoicePaymentType_p" />
@@ -25859,7 +25973,7 @@
             <Parameter Name="PatientID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetInvoiceNextSerial" ReturnType="Collection(String)">
-            <Parameter Name="InvoiceType" Mode="In" Type="Int32" />
+          <Parameter Name="InvoiceType" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetInvoicePaymentSerial" ReturnType="Collection(String)" />
           <FunctionImport Name="GetInvoicesPaymentBriefReport" ReturnType="Collection(MerkFinanceModel.GetInvoicesPaymentBriefReport_Result)">
@@ -26493,6 +26607,16 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="DailyTransactionType_p">
+            <EntityTypeMapping TypeName="MerkFinanceModel.DailyTransactionType_p">
+              <MappingFragment StoreEntitySet="DailyTransactionType_p">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name_P" ColumnName="Name_P" />
+                <ScalarProperty Name="Name_S" ColumnName="Name_S" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="DBVersions">
             <EntityTypeMapping TypeName="MerkFinanceModel.DBVersion">
               <MappingFragment StoreEntitySet="DBVersion">
@@ -26903,6 +27027,19 @@
                 <ScalarProperty Name="Name_P" ColumnName="Name_P" />
                 <ScalarProperty Name="Name_S" ColumnName="Name_S" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FinanceDailyTransactions">
+            <EntityTypeMapping TypeName="MerkFinanceModel.FinanceDailyTransaction">
+              <MappingFragment StoreEntitySet="FinanceDailyTransaction">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="DailyTransactionType_P_ID" ColumnName="DailyTransactionType_P_ID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsOnDuty" ColumnName="IsOnDuty" />
+                <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

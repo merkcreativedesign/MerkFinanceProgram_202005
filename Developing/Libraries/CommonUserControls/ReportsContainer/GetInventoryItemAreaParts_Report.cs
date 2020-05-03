@@ -10,9 +10,9 @@ using MVCBusinessLogicLibrary.Viewers;
 namespace CommonUserControls.ReportsContainer
 {
 	public partial class GetInventoryItemAreaParts_Report : 
-		//UserControl
-		CommonAbstractSearchViewer<GetInventoryItemAreaParts_Result>,
-		IGetInventoryItemAreaParts_Viewer
+		UserControl
+		//CommonAbstractSearchViewer<GetInventoryItemAreaParts_Result>,
+		//IGetInventoryItemAreaParts_Viewer
 	{
 		public GetInventoryItemAreaParts_Report()
 		{
@@ -25,33 +25,33 @@ namespace CommonUserControls.ReportsContainer
 
 		#region Overrides of CommonAbstractViewer<GetInventoryItemAreaParts_Result>
 
-		public override object ViewerID
-		{
-			get { return (int)ViewerName.GetInventoryItemAreaParts_Viewer; }
-		}
+		//public override object ViewerID
+		//{
+		//	get { return (int)ViewerName.GetInventoryItemAreaParts_Viewer; }
+		//}
 
-		public override string HeaderTitle
-		{
-			get { return string.Empty; }
-		}
+		//public override string HeaderTitle
+		//{
+		//	get { return string.Empty; }
+		//}
 
-		public override string GridXML
-		{
-			get
-			{
-				return Resources.LocalizedRes.grd_GetInventoryItemAreaParts;
-			}
-		}
+		//public override string GridXML
+		//{
+		//	get
+		//	{
+		//		return Resources.LocalizedRes.grd_GetInventoryItemAreaParts;
+		//	}
+		//}
 
-		public override void FillControls()
-		{
-			CommonViewsActions.FillGridlookupEdit(lkeInventoryItem, InventoryItem_cu.ItemsList);
-		}
+		//public override void FillControls()
+		//{
+		//	CommonViewsActions.FillGridlookupEdit(lkeInventoryItem, InventoryItem_cu.ItemsList);
+		//}
 
-		public override void ClearControls()
-		{
-			lkeInventoryItem.EditValue = null;
-		}
+		//public override void ClearControls()
+		//{
+		//	lkeInventoryItem.EditValue = null;
+		//}
 
 		#endregion
 
