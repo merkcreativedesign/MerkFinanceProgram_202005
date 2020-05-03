@@ -41,6 +41,8 @@ IF NOT EXISTS (SELECT 1 FROM [dbo].Application_p WHERE ID = 9)
 INSERT INTO dbo.Application_p( ID ,Name_P ,Name_S ,IsOnDuty ,Description)VALUES  ( 9,N'برنامج إستقبال عمليات اليوم الواحد',N'One Day Surgery Reception',1,NULL)
 IF NOT EXISTS (SELECT 1 FROM [dbo].Application_p WHERE ID = 10)
 INSERT INTO dbo.Application_p( ID ,Name_P ,Name_S ,IsOnDuty ,Description)VALUES  ( 10,N'OphalmologySurgeryApplication',N'OphalmologySurgeryApplication',1,NULL)
+IF NOT EXISTS (SELECT 1 FROM [dbo].Application_p WHERE ID = 11)
+INSERT INTO dbo.Application_p( ID ,Name_P ,Name_S ,IsOnDuty ,Description)VALUES  ( 10,N'MerkFinance',N'MerkFinance',1,NULL)
 -- ///////////// END :: Application_p
 
 -- ///////////// BEGIN :: CashBoxTransactionType_p
@@ -265,6 +267,12 @@ IF NOT EXISTS (SELECT 1 FROM [dbo].Organization_p WHERE ID BETWEEN 1 AND 3)
 INSERT INTO dbo.Organization_p( ID, Name_P, Name_S, Description )VALUES  ( 1,N'الأنبا إبرآم',N'Ava Abraam',NULL)
 ,( 2,N'Dental_Clinic',N'Dental_Clinic',NULL)
 ,( 3,N'Cardiovascular_Clinic',N'Cardiovascular_Clinic',NULL)
+
+IF NOT EXISTS (SELECT 1 FROM [dbo].Organization_p WHERE ID = 4)
+INSERT INTO dbo.Organization_p( ID, Name_P, Name_S, Description )VALUES  ( 4,N'Ophthalmology',N'Ophthalmology',NULL)
+
+IF NOT EXISTS (SELECT 1 FROM [dbo].Organization_p WHERE ID = 5)
+INSERT INTO dbo.Organization_p( ID, Name_P, Name_S, Description )VALUES  ( 5,N'MerkFinance',N'MerkFinance',NULL)
 -- ///////////// END :: Organization_p
 
 -- ///////////// BEGIN :: PaymentType_p

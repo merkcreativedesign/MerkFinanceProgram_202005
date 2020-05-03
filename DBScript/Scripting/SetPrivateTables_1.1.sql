@@ -23,12 +23,12 @@ INSERT INTO dbo.IdentificationCardType_p( ID, Name_P, Name_S, Description )VALUE
 ,(4,N'رخصة قيادة دراجة نارية خاصة',N'رخصة قيادة دراجة نارية خاصة',NULL)
 -- ///////////// END :: IdentificationCardType_p
 
--- ///////////// BEGIN :: InPatientAddmissionPricingType_p
-PRINT 'InPatientAddmissionPricingType_p'
-IF NOT EXISTS (SELECT 1 FROM [dbo].InPatientAddmissionPricingType_p WHERE ID BETWEEN 1 AND 2)
-INSERT INTO dbo.InPatientAddmissionPricingType_p( ID, Name_P, Name_S, Description )VALUES  (1,N'إقامة المريض',N'إقامة المريض',NULL)
+-- ///////////// BEGIN :: InPatientAdmissionPricingType_p
+PRINT 'InPatientAdmissionPricingType_p'
+IF NOT EXISTS (SELECT 1 FROM [dbo].InPatientAdmissionPricingType_p WHERE ID BETWEEN 1 AND 2)
+INSERT INTO dbo.InPatientAdmissionPricingType_p( ID, Name_P, Name_S, Description )VALUES  (1,N'إقامة المريض',N'إقامة المريض',NULL)
 ,(2,N'إقامة المرافق',N'إقامة المرافق',NULL)
--- ///////////// END :: InPatientAddmissionPricingType_p
+-- ///////////// END :: InPatientAdmissionPricingType_p
 
 -- ///////////// BEGIN :: InPatientRoomBedStatus_p
 PRINT 'InPatientRoomBedStatus_p'
@@ -136,6 +136,14 @@ INSERT INTO dbo.ServiceType_p( ID ,  Name_P ,  Name_S ,  Description) VALUES  ( 
 ,( 6,N'أخرى',N'أخرى',null)
 
 -- ///////////// END :: ServiceType_p
+
+-- ///////////// BEGIN :: DailyTransactionType_p
+IF NOT EXISTS (SELECT 1 FROM [dbo].DailyTransactionType_p WHERE ID BETWEEN 1 AND 3)
+INSERT INTO dbo.DailyTransactionType_p( ID ,  Name_P ,  Name_S ,  Description) VALUES  ( 1,N'إيراد',N'إيراد',null)
+,( 2,N'مصروف',N'مصروف',null)
+,( 3,N'متبقي',N'متبقي',null)
+
+-- ///////////// END :: DailyTransactionType_p
 
 IF @@ERROR<>0 AND @@TRANCOUNT>0 ROLLBACK TRANSACTION
 GO
