@@ -344,6 +344,35 @@ namespace MerkDataBaseBusinessLogicProject
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetCustomerInvoices_Result>("GetCustomerInvoices", customerIDParameter, isOnDutyParameter, invoiceTypeIDParameter, isPaymentEnoughParameter, isFinanciallyReviewedParameter, isFinanciallyCompletedParameter);
         }
     
+        public virtual ObjectResult<GetFinanceDailyTransaction_SearchCriteria_Result> GetFinanceDailyTransaction_SearchCriteria(Nullable<double> amountMin, Nullable<double> amountMax, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, Nullable<bool> isOnDuty, Nullable<int> userID)
+        {
+            var amountMinParameter = amountMin.HasValue ?
+                new ObjectParameter("AmountMin", amountMin) :
+                new ObjectParameter("AmountMin", typeof(double));
+    
+            var amountMaxParameter = amountMax.HasValue ?
+                new ObjectParameter("AmountMax", amountMax) :
+                new ObjectParameter("AmountMax", typeof(double));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            var isOnDutyParameter = isOnDuty.HasValue ?
+                new ObjectParameter("IsOnDuty", isOnDuty) :
+                new ObjectParameter("IsOnDuty", typeof(bool));
+    
+            var userIDParameter = userID.HasValue ?
+                new ObjectParameter("UserID", userID) :
+                new ObjectParameter("UserID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetFinanceDailyTransaction_SearchCriteria_Result>("GetFinanceDailyTransaction_SearchCriteria", amountMinParameter, amountMaxParameter, fromDateParameter, toDateParameter, isOnDutyParameter, userIDParameter);
+        }
+    
         public virtual ObjectResult<GetInvoiceForAddmission_Result> GetInvoiceForAddmission(Nullable<System.DateTime> invoiceCreationDateStart, Nullable<System.DateTime> invoiceCreationDateEnd, Nullable<int> invoiceTypeID, Nullable<bool> invoiceIsOnDuty, Nullable<bool> invoiceIsFinanciallyReviewed, Nullable<bool> invoiceIsPrinted, Nullable<bool> invoiceIsPaymentEnough, Nullable<int> doctorID, Nullable<int> patientID)
         {
             var invoiceCreationDateStartParameter = invoiceCreationDateStart.HasValue ?

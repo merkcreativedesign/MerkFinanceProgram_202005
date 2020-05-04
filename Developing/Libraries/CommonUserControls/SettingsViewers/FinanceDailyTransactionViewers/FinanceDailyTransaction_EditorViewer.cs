@@ -36,8 +36,7 @@ namespace CommonUserControls.SettingsViewers.FinanceDailyTransactionViewers
 
 		public override void FillControls()
 		{
-			CommonViewsActions.FillGridlookupEdit(lkeDailyTransactionType,
-				MerkDataBaseBusinessLogicProject.FinanceDailyTransaction.ItemsList);
+			CommonViewsActions.FillGridlookupEdit(lkeDailyTransactionType, DailyTransactionType_p.ItemsList);
 		}
 
 		public override void ClearControls()

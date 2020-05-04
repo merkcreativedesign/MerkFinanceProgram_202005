@@ -315,6 +315,9 @@
     <Compile Include="GetCustomerInvoices_Result.cs">
       <DependentUpon>MerkFinanceEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="GetFinanceDailyTransaction_SearchCriteria_Result.cs">
+      <DependentUpon>MerkFinanceEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="GetInvoiceForAddmission_Result.cs">
       <DependentUpon>MerkFinanceEntities.tt</DependentUpon>
     </Compile>
@@ -534,6 +537,7 @@
     <Compile Include="MerkDataBaseBusinessLogic\MerkModelCreateor\CustomEntities\InventoryItem_Color_cu.cs" />
     <Compile Include="MerkDataBaseBusinessLogic\MerkModelCreateor\CustomEntities\InventoryItem_Printing_cu.cs" />
     <Compile Include="MerkDataBaseBusinessLogic\MerkModelCreateor\CustomEntities\InventoryItem_RawMaterial_cu.cs" />
+    <Compile Include="MerkDataBaseBusinessLogic\MerkModelCreateor\CustomEntities\LoggingHistory.cs" />
     <Compile Include="MerkDataBaseBusinessLogic\MerkModelCreateor\CustomEntities\OrganizationMachine_StationPoint_cu.cs" />
     <Compile Include="MerkDataBaseBusinessLogic\MerkModelCreateor\CustomEntities\PEMRSavingMode_User_cu.cs" />
     <Compile Include="MerkDataBaseBusinessLogic\MerkModelCreateor\CustomEntities\PupillaryAbnormalities_cu.cs" />
@@ -676,6 +680,7 @@
     <Compile Include="MerkDataBaseBusinessLogic\MerkModelCreateor\PrivateEntities\VisionRefractionReadingType_p.cs" />
     <Compile Include="MerkDataBaseBusinessLogic\MerkModelCreateor\PrivateEntities\WeightUnit_p.cs" />
     <Compile Include="MerkDataBaseBusinessLogic\MerkModelCreateor\StoredProcedures\GetCustomerInvoices_Result.cs" />
+    <Compile Include="MerkDataBaseBusinessLogic\MerkModelCreateor\StoredProcedures\GetFinanceDailyTransaction_SearchCriteria_Result.cs" />
     <Compile Include="MerkDataBaseBusinessLogic\MerkModelCreateor\StoredProcedures\GetInventoryItemCostsDetails_Result.cs" />
     <Compile Include="MerkDataBaseBusinessLogic\MerkModelCreateor\StoredProcedures\GetInvoicesPaymentBriefReport_Result.cs" />
     <Compile Include="MerkDataBaseBusinessLogic\MerkModelCreateor\StoredProcedures\GetPatientDepositBalance_Result.cs" />
@@ -701,7 +706,6 @@
     <Compile Include="MerkDataBaseBusinessLogic\MerkModelCreateor\TransactionEntities\InvoicePayment.cs" />
     <Compile Include="MerkDataBaseBusinessLogic\MerkModelCreateor\TransactionEntities\InvoiceShare.cs" />
     <Compile Include="MerkDataBaseBusinessLogic\MerkModelCreateor\CustomEntities\PatientAttachment_cu.cs" />
-    <Compile Include="MerkDataBaseBusinessLogic\MerkModelCreateor\TransactionEntities\LoggingHistory.cs" />
     <Compile Include="MerkDataBaseBusinessLogic\MerkModelCreateor\TransactionEntities\PatientDepositeBalance.cs" />
     <Compile Include="MerkDataBaseBusinessLogic\MerkModelCreateor\TransactionEntities\QueueManager.cs" />
     <Compile Include="MerkDataBaseBusinessLogic\MerkModelCreateor\TransactionEntities\VisitTiming.cs" />

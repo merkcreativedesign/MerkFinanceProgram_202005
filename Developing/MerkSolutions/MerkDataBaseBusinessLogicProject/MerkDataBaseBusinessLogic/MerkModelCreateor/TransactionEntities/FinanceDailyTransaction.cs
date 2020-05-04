@@ -23,12 +23,12 @@ namespace MerkDataBaseBusinessLogicProject
 
 		public override bool LoadFromDB
 		{
-			get { return false; }
+			get { return true; }
 		}
 
 		public override DBCommonEntitiesType TableType
 		{
-			get { return DBCommonEntitiesType.TransactionsEntities; }
+			get { return DBCommonEntitiesType.CustomUserEntities; }
 		}
 
 		public override bool LoadItemsList()
@@ -68,7 +68,23 @@ namespace MerkDataBaseBusinessLogicProject
 		{
 			get
 			{
-				DailyTransactionType_p type = 
+				DailyTransactionType_p type = DailyTransactionType_p.ItemsList.Find(item =>
+					Convert.ToInt32(item.ID).Equals(Convert.ToInt32(DailyTransactionType_P_ID)));
+				if (type != null)
+					return type.Name_P;
+				return null;
+			}
+		}
+
+		public string UserName
+		{
+			get
+			{
+				User_cu user =
+					User_cu.ItemsList.Find(item => Convert.ToInt32(item.ID).Equals(Convert.ToInt32(InsertedBy)));
+				if (user != null)
+					return user.FullName.ToString();
+				return null;
 			}
 		}
 	}

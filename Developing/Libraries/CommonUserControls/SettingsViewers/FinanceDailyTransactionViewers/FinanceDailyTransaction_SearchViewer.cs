@@ -11,7 +11,7 @@ namespace CommonUserControls.SettingsViewers.FinanceDailyTransaction
 	public partial class FinanceDailyTransaction_SearchViewer : 
 		//UserControl
 		CommonAbstractSearchViewer<MerkDataBaseBusinessLogicProject.FinanceDailyTransaction>,
-		IFinanceDailyTransactionViewer
+		IFinanceDailyTransactionSearchViewer
 	{
 		public FinanceDailyTransaction_SearchViewer()
 		{
@@ -36,8 +36,7 @@ namespace CommonUserControls.SettingsViewers.FinanceDailyTransaction
 
 		public override void FillControls()
 		{
-			CommonViewsActions.FillGridlookupEdit(lkeDailyTransactionType,
-				MerkDataBaseBusinessLogicProject.FinanceDailyTransaction.ItemsList);
+			CommonViewsActions.FillGridlookupEdit(lkeDailyTransactionType, DailyTransactionType_p.ItemsList);
 		}
 
 		public override void ClearControls()
@@ -80,6 +79,16 @@ namespace CommonUserControls.SettingsViewers.FinanceDailyTransaction
 			get { return txtDescription.EditValue; }
 			set { txtDescription.EditValue = value; }
 		}
+
+		#endregion
+
+		#region Implementation of IFinanceDailyTransactionSearchViewer
+
+		public object amountMin { get; set; }
+		public object amountMax { get; set; }
+		public object dateFrom { get; set; }
+		public object dateTo { get; set; }
+		public object isOnDuty { get; set; }
 
 		#endregion
 	}

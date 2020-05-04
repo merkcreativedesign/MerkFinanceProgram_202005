@@ -46,6 +46,10 @@ namespace CommonUserControls.CommonViewers
 			}
 
 			lblApplicationTItle.ForeColor = Color.FromArgb(41, 45, 56);
+
+			string lastUserName = ApplicationStaticConfiguration.GetLastLoggingHistoryUserName();
+			txtUserName.Text = lastUserName;
+			txtPassword.Focus();
 		}
 
 		public static DialogResult ShowLoginScreen()

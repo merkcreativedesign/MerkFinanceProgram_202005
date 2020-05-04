@@ -41,6 +41,9 @@ namespace MVCBusinessLogicLibrary.MVCDataCollectors
 			if (Description != null)
 				((FinanceDailyTransaction)ActiveDBItem).Description = Description.ToString();
 
+			if (UserID != null)
+				((FinanceDailyTransaction)ActiveDBItem).InsertedBy = Convert.ToInt32(UserID);
+
 			((FinanceDailyTransaction)ActiveDBItem).IsOnDuty = true;
 			switch (((IFinanceDailyTransactionViewer)ActiveCollector.ActiveViewer).CommonTransactionType)
 			{
@@ -77,8 +80,16 @@ namespace MVCBusinessLogicLibrary.MVCDataCollectors
 		}
 		public override object IsOnDUty { get; set; }
 		public override DB_CommonTransactionType CommonTransactionType { get; set; }
-		public override string HeaderTitle { get; }
-		public override string GridXML { get; }
+		public override string HeaderTitle
+		{
+			get { throw new System.NotImplementedException(); }
+		}
+
+		public override string GridXML
+		{
+			get { throw new System.NotImplementedException(); }
+		}
+
 		public override List<IViewer> RelatedViewers { get; set; }
 
 		public override void ClearControls()
@@ -94,6 +105,7 @@ namespace MVCBusinessLogicLibrary.MVCDataCollectors
 		public override object[] CollectSearchCriteria()
 		{
 			List<FinanceDailyTransaction> list = FinanceDailyTransaction.ItemsList.FindAll(item => item.IsOnDuty);
+			//List<FinanceDailyTransaction> list = GetFinanceDailyTransaction_SearchCriteria_Result()
 			return list.ToArray();
 		}
 
@@ -108,6 +120,29 @@ namespace MVCBusinessLogicLibrary.MVCDataCollectors
 				return true;
 			}
 			return false;
+		}
+
+		public override bool ValidateBeforeSave(ref string message)
+		{
+			if (DailyTransactionType == null)
+			{
+				MessageToView = "يجــب إختيــار نــوع المعـاملـــة الماليـــــة";
+				return false;
+			}
+
+			if (Amount == null)
+			{
+				MessageToView = "يجــب كتابـــة قيمــــة المعـاملـــة الماليـــــة";
+				return false;
+			}
+
+			if (Date == null)
+			{
+				MessageToView = "يجــب كتابـــة تاريــــخ المعـاملـــة الماليـــــة";
+				return false;
+			}
+
+			return true;
 		}
 
 		public override bool SaveChanges(DB_CommonTransactionType commonTransactionType)

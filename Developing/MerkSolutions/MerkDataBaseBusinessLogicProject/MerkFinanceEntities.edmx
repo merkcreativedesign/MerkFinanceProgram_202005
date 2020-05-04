@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="MerkFinanceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="MerkFinanceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AccountingJournalEntryTransaction">
           <Key>
             <PropertyRef Name="ID" />
@@ -1572,6 +1572,8 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="User_UC_ID" Type="int" Nullable="false" />
           <Property Name="LoginDate" Type="datetime" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="150" />
+          <Property Name="Password" Type="nvarchar" MaxLength="150" />
           <Property Name="OragnizationID" Type="int" />
           <Property Name="OragnizationName" Type="nvarchar" MaxLength="150" />
           <Property Name="PrivateOragnizationID" Type="int" />
@@ -9875,6 +9877,14 @@
         <Function Name="GetDoctorFullName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="nvarchar">
           <Parameter Name="DoctorID" Type="int" Mode="In" />
         </Function>
+        <Function Name="GetFinanceDailyTransaction_SearchCriteria" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AmountMin" Type="float" Mode="In" />
+          <Parameter Name="AmountMax" Type="float" Mode="In" />
+          <Parameter Name="FromDate" Type="date" Mode="In" />
+          <Parameter Name="ToDate" Type="date" Mode="In" />
+          <Parameter Name="IsOnDuty" Type="bit" Mode="In" />
+          <Parameter Name="UserID" Type="int" Mode="In" />
+        </Function>
         <Function Name="GetFinanceDailyTransactionCount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
         <Function Name="GetInvoiceForAddmission" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="InvoiceCreationDateStart" Type="datetime" Mode="In" />
@@ -12480,7 +12490,8 @@
             <End Role="WorkingShiftTitle_cu" EntitySet="WorkingShiftTitle_cu" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MerkFinanceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -14542,6 +14553,8 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="User_UC_ID" Type="Int32" Nullable="false" />
           <Property Name="LoginDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UserName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="OragnizationID" Type="Int32" />
           <Property Name="OragnizationName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="PrivateOragnizationID" Type="Int32" />
@@ -25961,6 +25974,14 @@
             <Parameter Name="IsFinanciallyReviewed" Mode="In" Type="Boolean" />
             <Parameter Name="IsFinanciallyCompleted" Mode="In" Type="Boolean" />
           </FunctionImport>
+          <FunctionImport Name="GetFinanceDailyTransaction_SearchCriteria" ReturnType="Collection(MerkFinanceModel.GetFinanceDailyTransaction_SearchCriteria_Result)">
+            <Parameter Name="AmountMin" Mode="In" Type="Double" />
+            <Parameter Name="AmountMax" Mode="In" Type="Double" />
+            <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+            <Parameter Name="IsOnDuty" Mode="In" Type="Boolean" />
+            <Parameter Name="UserID" Mode="In" Type="Int32" />
+          </FunctionImport>
           <FunctionImport Name="GetInvoiceForAddmission" ReturnType="Collection(MerkFinanceModel.GetInvoiceForAddmission_Result)">
             <Parameter Name="InvoiceCreationDateStart" Mode="In" Type="DateTime" />
             <Parameter Name="InvoiceCreationDateEnd" Mode="In" Type="DateTime" />
@@ -25973,7 +25994,7 @@
             <Parameter Name="PatientID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetInvoiceNextSerial" ReturnType="Collection(String)">
-          <Parameter Name="InvoiceType" Mode="In" Type="Int32" />
+            <Parameter Name="InvoiceType" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetInvoicePaymentSerial" ReturnType="Collection(String)" />
           <FunctionImport Name="GetInvoicesPaymentBriefReport" ReturnType="Collection(MerkFinanceModel.GetInvoicesPaymentBriefReport_Result)">
@@ -26094,6 +26115,13 @@
           <Property Type="Double" Name="TotalRequestedAmount" Nullable="true" />
           <Property Type="Double" Name="TotalPaymentsAmount" Nullable="true" />
           <Property Type="Double" Name="Requested_VS_Payment" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GetFinanceDailyTransaction_SearchCriteria_Result">
+          <Property Type="Double" Name="Amount" Nullable="false" />
+          <Property Type="DateTime" Name="Date" Nullable="false" Precision="23" />
+          <Property Type="String" Name="DESCRIPTION" Nullable="true" MaxLength="300" />
+          <Property Type="String" Name="DailyTransactionTypeName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="UserName" Nullable="true" MaxLength="200" />
         </ComplexType>
         <ComplexType Name="GetInvoiceForAddmission_Result">
           <Property Type="Int32" Name="PatientID" Nullable="false" />
@@ -27942,6 +27970,8 @@
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="User_UC_ID" ColumnName="User_UC_ID" />
                 <ScalarProperty Name="LoginDate" ColumnName="LoginDate" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="OragnizationID" ColumnName="OragnizationID" />
                 <ScalarProperty Name="OragnizationName" ColumnName="OragnizationName" />
                 <ScalarProperty Name="PrivateOragnizationID" ColumnName="PrivateOragnizationID" />
@@ -29672,6 +29702,17 @@
                 <ScalarProperty Name="TotalRequestedAmount" ColumnName="TotalRequestedAmount" />
                 <ScalarProperty Name="TotalPaymentsAmount" ColumnName="TotalPaymentsAmount" />
                 <ScalarProperty Name="Requested_VS_Payment" ColumnName="Requested_VS_Payment" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetFinanceDailyTransaction_SearchCriteria" FunctionName="MerkFinanceModel.Store.GetFinanceDailyTransaction_SearchCriteria">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MerkFinanceModel.GetFinanceDailyTransaction_SearchCriteria_Result">
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="DailyTransactionTypeName" ColumnName="DailyTransactionTypeName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

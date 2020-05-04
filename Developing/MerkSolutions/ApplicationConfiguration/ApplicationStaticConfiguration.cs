@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using MerkDataBaseBusinessLogicProject;
@@ -249,6 +250,8 @@ namespace ApplicationConfiguration
 			LoggingHistory log = DBCommon.CreateNewDBEntity<LoggingHistory>();
 			log.User_UC_ID = ActiveLoginUser.Person_CU_ID;
 			log.LoginDate = DateTime.Now;
+			log.UserName = ActiveLoginUser.LoginName;
+			log.Password = ActiveLoginUser.Password;
 			log.OragnizationID = OrganizationMachine.ID;
 			log.OragnizationName = OrganizationMachineName;
 			log.PrivateOragnizationID = (int) Organization;
@@ -263,5 +266,22 @@ namespace ApplicationConfiguration
 			log.SaveChanges();
 			return true;
 		}
+
+		public static LoggingHistory GetLatestLoggingHistory()
+		{
+			LoggingHistory logging = LoggingHistory.ItemsList.FirstOrDefault();
+			return logging;
+		}
+
+		public static String GetLastLoggingHistoryUserName()
+		{
+			LoggingHistory logging = GetLatestLoggingHistory();
+			if (logging == null)
+				return null;
+			String cred;
+			cred = logging.UserName;
+			return cred;
+		}
 	}
 }
+

@@ -29,35 +29,35 @@
 		private void InitializeComponent()
 		{
 			this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-			this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-			this.dtDate = new DevExpress.XtraEditors.DateEdit();
-			this.spnAmount = new DevExpress.XtraEditors.SpinEdit();
+			this.txtDescription = new DevExpress.XtraEditors.TextEdit();
 			this.lkeDailyTransactionType = new DevExpress.XtraEditors.GridLookUpEdit();
 			this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-			this.txtDescription = new DevExpress.XtraEditors.TextEdit();
+			this.spnAmount = new DevExpress.XtraEditors.SpinEdit();
+			this.dtDate = new DevExpress.XtraEditors.DateEdit();
+			this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
 			this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-			this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-			this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
 			this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+			this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
 			this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+			this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
 			this.layoutControl1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.dtDate.Properties.CalendarTimeProperties)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.dtDate.Properties)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.spnAmount.Properties)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.lkeDailyTransactionType.Properties)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.spnAmount.Properties)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dtDate.Properties.CalendarTimeProperties)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dtDate.Properties)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// layoutControl1
@@ -75,39 +75,37 @@
 			this.layoutControl1.TabIndex = 0;
 			this.layoutControl1.Text = "layoutControl1";
 			// 
-			// layoutControlGroup1
+			// txtDescription
 			// 
-			this.layoutControlGroup1.CustomizationFormText = "Root";
-			this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-			this.layoutControlGroup1.GroupBordersVisible = false;
-			this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1,
-            this.emptySpaceItem1,
-            this.layoutControlItem4,
-            this.layoutControlItem3,
-            this.emptySpaceItem3,
-            this.layoutControlItem2,
-            this.emptySpaceItem2});
-			this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
-			this.layoutControlGroup1.Name = "Root";
-			this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-			this.layoutControlGroup1.Size = new System.Drawing.Size(1057, 121);
-			this.layoutControlGroup1.TextVisible = false;
+			this.txtDescription.Location = new System.Drawing.Point(3, 91);
+			this.txtDescription.Name = "txtDescription";
+			this.txtDescription.Properties.Appearance.BackColor = System.Drawing.Color.White;
+			this.txtDescription.Properties.Appearance.Options.UseBackColor = true;
+			this.txtDescription.Size = new System.Drawing.Size(988, 20);
+			this.txtDescription.StyleController = this.layoutControl1;
+			this.txtDescription.TabIndex = 32;
 			// 
-			// dtDate
+			// lkeDailyTransactionType
 			// 
-			this.dtDate.EditValue = null;
-			this.dtDate.Location = new System.Drawing.Point(871, 3);
-			this.dtDate.MaximumSize = new System.Drawing.Size(120, 0);
-			this.dtDate.MinimumSize = new System.Drawing.Size(120, 0);
-			this.dtDate.Name = "dtDate";
-			this.dtDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+			this.lkeDailyTransactionType.Location = new System.Drawing.Point(691, 65);
+			this.lkeDailyTransactionType.MaximumSize = new System.Drawing.Size(300, 0);
+			this.lkeDailyTransactionType.MinimumSize = new System.Drawing.Size(300, 0);
+			this.lkeDailyTransactionType.Name = "lkeDailyTransactionType";
+			this.lkeDailyTransactionType.Properties.Appearance.BackColor = System.Drawing.Color.NavajoWhite;
+			this.lkeDailyTransactionType.Properties.Appearance.Options.UseBackColor = true;
+			this.lkeDailyTransactionType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-			this.dtDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-			this.dtDate.Size = new System.Drawing.Size(120, 20);
-			this.dtDate.StyleController = this.layoutControl1;
-			this.dtDate.TabIndex = 26;
+			this.lkeDailyTransactionType.Properties.View = this.gridView2;
+			this.lkeDailyTransactionType.Size = new System.Drawing.Size(300, 20);
+			this.lkeDailyTransactionType.StyleController = this.layoutControl1;
+			this.lkeDailyTransactionType.TabIndex = 31;
+			// 
+			// gridView2
+			// 
+			this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+			this.gridView2.Name = "gridView2";
+			this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+			this.gridView2.OptionsView.ShowGroupPanel = false;
 			// 
 			// spnAmount
 			// 
@@ -137,37 +135,39 @@
 			this.spnAmount.StyleController = this.layoutControl1;
 			this.spnAmount.TabIndex = 30;
 			// 
-			// lkeDailyTransactionType
+			// dtDate
 			// 
-			this.lkeDailyTransactionType.Location = new System.Drawing.Point(691, 65);
-			this.lkeDailyTransactionType.MaximumSize = new System.Drawing.Size(300, 0);
-			this.lkeDailyTransactionType.MinimumSize = new System.Drawing.Size(300, 0);
-			this.lkeDailyTransactionType.Name = "lkeDailyTransactionType";
-			this.lkeDailyTransactionType.Properties.Appearance.BackColor = System.Drawing.Color.NavajoWhite;
-			this.lkeDailyTransactionType.Properties.Appearance.Options.UseBackColor = true;
-			this.lkeDailyTransactionType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+			this.dtDate.EditValue = null;
+			this.dtDate.Location = new System.Drawing.Point(871, 3);
+			this.dtDate.MaximumSize = new System.Drawing.Size(120, 0);
+			this.dtDate.MinimumSize = new System.Drawing.Size(120, 0);
+			this.dtDate.Name = "dtDate";
+			this.dtDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-			this.lkeDailyTransactionType.Properties.View = this.gridView2;
-			this.lkeDailyTransactionType.Size = new System.Drawing.Size(300, 20);
-			this.lkeDailyTransactionType.StyleController = this.layoutControl1;
-			this.lkeDailyTransactionType.TabIndex = 31;
+			this.dtDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+			this.dtDate.Size = new System.Drawing.Size(120, 20);
+			this.dtDate.StyleController = this.layoutControl1;
+			this.dtDate.TabIndex = 26;
 			// 
-			// gridView2
+			// layoutControlGroup1
 			// 
-			this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-			this.gridView2.Name = "gridView2";
-			this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
-			this.gridView2.OptionsView.ShowGroupPanel = false;
-			// 
-			// txtDescription
-			// 
-			this.txtDescription.Location = new System.Drawing.Point(3, 91);
-			this.txtDescription.Name = "txtDescription";
-			this.txtDescription.Properties.Appearance.BackColor = System.Drawing.Color.White;
-			this.txtDescription.Properties.Appearance.Options.UseBackColor = true;
-			this.txtDescription.Size = new System.Drawing.Size(988, 20);
-			this.txtDescription.StyleController = this.layoutControl1;
-			this.txtDescription.TabIndex = 32;
+			this.layoutControlGroup1.CustomizationFormText = "Root";
+			this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+			this.layoutControlGroup1.GroupBordersVisible = false;
+			this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1,
+            this.emptySpaceItem1,
+            this.layoutControlItem4,
+            this.layoutControlItem3,
+            this.emptySpaceItem3,
+            this.layoutControlItem2,
+            this.emptySpaceItem2});
+			this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
+			this.layoutControlGroup1.Name = "Root";
+			this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
+			this.layoutControlGroup1.Size = new System.Drawing.Size(1057, 121);
+			this.layoutControlGroup1.TextVisible = false;
 			// 
 			// layoutControlItem1
 			// 
@@ -189,24 +189,6 @@
 			this.emptySpaceItem1.Name = "emptySpaceItem1";
 			this.emptySpaceItem1.Size = new System.Drawing.Size(868, 26);
 			this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
-			// 
-			// emptySpaceItem2
-			// 
-			this.emptySpaceItem2.AllowHotTrack = false;
-			this.emptySpaceItem2.CustomizationFormText = "emptySpaceItem2";
-			this.emptySpaceItem2.Location = new System.Drawing.Point(0, 26);
-			this.emptySpaceItem2.Name = "emptySpaceItem2";
-			this.emptySpaceItem2.Size = new System.Drawing.Size(858, 36);
-			this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
-			// 
-			// emptySpaceItem3
-			// 
-			this.emptySpaceItem3.AllowHotTrack = false;
-			this.emptySpaceItem3.CustomizationFormText = "emptySpaceItem3";
-			this.emptySpaceItem3.Location = new System.Drawing.Point(0, 62);
-			this.emptySpaceItem3.Name = "emptySpaceItem3";
-			this.emptySpaceItem3.Size = new System.Drawing.Size(688, 26);
-			this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
 			// 
 			// layoutControlItem4
 			// 
@@ -232,6 +214,15 @@
 			this.layoutControlItem3.Text = "نوع العملية";
 			this.layoutControlItem3.TextSize = new System.Drawing.Size(60, 13);
 			// 
+			// emptySpaceItem3
+			// 
+			this.emptySpaceItem3.AllowHotTrack = false;
+			this.emptySpaceItem3.CustomizationFormText = "emptySpaceItem3";
+			this.emptySpaceItem3.Location = new System.Drawing.Point(0, 62);
+			this.emptySpaceItem3.Name = "emptySpaceItem3";
+			this.emptySpaceItem3.Size = new System.Drawing.Size(688, 26);
+			this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
+			// 
 			// layoutControlItem2
 			// 
 			this.layoutControlItem2.Control = this.spnAmount;
@@ -244,30 +235,40 @@
 			this.layoutControlItem2.Text = "القيمة";
 			this.layoutControlItem2.TextSize = new System.Drawing.Size(60, 13);
 			// 
+			// emptySpaceItem2
+			// 
+			this.emptySpaceItem2.AllowHotTrack = false;
+			this.emptySpaceItem2.CustomizationFormText = "emptySpaceItem2";
+			this.emptySpaceItem2.Location = new System.Drawing.Point(0, 26);
+			this.emptySpaceItem2.Name = "emptySpaceItem2";
+			this.emptySpaceItem2.Size = new System.Drawing.Size(858, 36);
+			this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
+			// 
 			// FinanceDailyTransaction_SearchViewer
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this.layoutControl1);
+			this.MinimumSize = new System.Drawing.Size(0, 121);
 			this.Name = "FinanceDailyTransaction_SearchViewer";
 			this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
 			this.Size = new System.Drawing.Size(1057, 121);
 			((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
 			this.layoutControl1.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.dtDate.Properties.CalendarTimeProperties)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.dtDate.Properties)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.spnAmount.Properties)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.lkeDailyTransactionType.Properties)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.spnAmount.Properties)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dtDate.Properties.CalendarTimeProperties)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dtDate.Properties)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
 			this.ResumeLayout(false);
 
 		}

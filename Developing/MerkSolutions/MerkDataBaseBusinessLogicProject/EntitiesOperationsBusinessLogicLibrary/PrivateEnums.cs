@@ -486,7 +486,8 @@
 		InventoryItem_Color_cu,
 		LoggingHistory,
 		FinanceDailyTransaction,
-		DailyTransactionType_p
+		DailyTransactionType_p,
+		LoggingHostory
 	}
 
 	public enum DB_Station

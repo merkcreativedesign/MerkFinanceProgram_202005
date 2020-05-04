@@ -43,7 +43,7 @@
         </property>
         <property name="Font">Tahoma, 10pt, style=Bold</property>
       </property>
-      <property name="Width">200</property>
+      <property name="Width">250</property>
       <property name="Visible">true</property>
       <property name="ColumnEditName" />
       <property name="VisibleIndex">0</property>
@@ -51,9 +51,18 @@
       <property name="OptionsColumn" isnull="true" iskey="true">
         <property name="AllowEdit">false</property>
         <property name="ReadOnly">true</property>
+        <property name="FixedWidth">true</property>
       </property>
       <property name="Caption">السعر</property>
       <property name="FieldName">Amount</property>
+      <property name="Summary" iskey="true" value="1">
+        <property name="Item1" isnull="true" iskey="true">
+          <property name="Tag" isnull="true" />
+          <property name="FieldName">Amount</property>
+          <property name="SummaryType">Sum</property>
+          <property name="DisplayFormat">SUM={0:#,##0.##}</property>
+        </property>
+      </property>
     </property>
     <property name="Item2" isnull="true" iskey="true">
       <property name="AppearanceHeader" isnull="true" iskey="true">
@@ -82,7 +91,7 @@
         </property>
         <property name="Font">Tahoma, 10pt, style=Bold</property>
       </property>
-      <property name="Width">140</property>
+      <property name="Width">130</property>
       <property name="Visible">true</property>
       <property name="ColumnEditName" />
       <property name="VisibleIndex">1</property>
@@ -90,6 +99,7 @@
       <property name="OptionsColumn" isnull="true" iskey="true">
         <property name="AllowEdit">false</property>
         <property name="ReadOnly">true</property>
+        <property name="FixedWidth">true</property>
       </property>
       <property name="Caption">التاريخ</property>
       <property name="FieldName">Date</property>
@@ -121,7 +131,7 @@
         </property>
         <property name="Font">Tahoma, 10pt, style=Bold</property>
       </property>
-      <property name="Width">150</property>
+      <property name="Width">120</property>
       <property name="Visible">true</property>
       <property name="ColumnEditName" />
       <property name="VisibleIndex">2</property>
@@ -129,6 +139,7 @@
       <property name="OptionsColumn" isnull="true" iskey="true">
         <property name="AllowEdit">false</property>
         <property name="ReadOnly">true</property>
+        <property name="FixedWidth">true</property>
       </property>
       <property name="Caption">نـــوع المعـاملـــــــة</property>
       <property name="FieldName">DailyTransactionTypeName</property>
@@ -160,7 +171,7 @@
         </property>
         <property name="Font">Tahoma, 10pt, style=Bold</property>
       </property>
-      <property name="Width">368</property>
+      <property name="Width">300</property>
       <property name="Visible">true</property>
       <property name="ColumnEditName" />
       <property name="VisibleIndex">3</property>
@@ -168,9 +179,10 @@
       <property name="OptionsColumn" isnull="true" iskey="true">
         <property name="AllowEdit">false</property>
         <property name="ReadOnly">true</property>
+        <property name="FixedWidth">true</property>
       </property>
       <property name="Caption">المـلاحظـــــــات</property>
-      <property name="FieldName">SupplierName</property>
+      <property name="FieldName">Description</property>
     </property>
     <property name="Item5" isnull="true" iskey="true">
       <property name="AppearanceHeader" isnull="true" iskey="true">
@@ -193,7 +205,7 @@
         </property>
         <property name="Font">Tahoma, 10pt, style=Bold</property>
       </property>
-      <property name="Width">44</property>
+      <property name="Width">102</property>
       <property name="Visible">true</property>
       <property name="ColumnEditName" />
       <property name="VisibleIndex">4</property>

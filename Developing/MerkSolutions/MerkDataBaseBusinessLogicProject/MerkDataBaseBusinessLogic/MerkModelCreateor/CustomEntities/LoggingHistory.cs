@@ -1,7 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using MerkDataBaseBusinessLogicProject;
 using MerkDataBaseBusinessLogicProject.EntitiesOperationsBusinessLogicLibrary;
 using MerkDataBaseBusinessLogicProject.MerkDataBaseBusinessLogic.MerkModelCreateor.DBCommon;
 
@@ -15,29 +15,18 @@ namespace MerkDataBaseBusinessLogicProject
 
 		#region ColumnNames
 
-		public static String Serial_ColumnaName
+		public static String Description_ColumnaName
 		{
-			get { return "Serial"; }
+			get { return "Description"; }
 		}
 
 		#endregion
 
-		public override bool LoadFromDB
+		public override IList ReGenerateList()
 		{
-			get { return false; }
-		}
+			LoadItemsList();
 
-		public override DBCommonEntitiesType TableType
-		{
-			get { return DBCommonEntitiesType.TransactionsEntities; }
-		}
-
-		public override bool LoadItemsList()
-		{
-			ItemsList.Clear();
-
-			ItemsList = DBContext_External.LoggingHistories.ToList();
-			return true;
+			return ItemsList;
 		}
 
 		public int TableIdentityID
@@ -45,14 +34,9 @@ namespace MerkDataBaseBusinessLogicProject
 			get { return (int)DB_TableIdentity.LoggingHistory; }
 		}
 
-		public List<string> ChildrenItemsList
+		List<string> IDBCommon.ChildrenItemsList
 		{
-			get
-			{
-				List<string> list = new List<string>();
-				list.Add("LoggingHistoryDetail");
-				return list;
-			}
+			get { return null; }
 		}
 
 		public string EntityName
@@ -63,6 +47,23 @@ namespace MerkDataBaseBusinessLogicProject
 		public IDBCommon GetSpecificEntity(MerkFinanceEntities context, int id)
 		{
 			return context.LoggingHistories.FirstOrDefault(item => item.ID.Equals(id));
+		}
+
+		public override bool LoadFromDB
+		{
+			get { return true; }
+		}
+
+		public override DBCommonEntitiesType TableType
+		{
+			get { return DBCommonEntitiesType.CustomUserEntities; }
+		}
+
+		public override bool LoadItemsList()
+		{
+			ItemsList.Clear();
+			ItemsList = DBContext_External.LoggingHistories.OrderByDescending(item => item.LoginDate).ToList();
+			return true;
 		}
 	}
 }

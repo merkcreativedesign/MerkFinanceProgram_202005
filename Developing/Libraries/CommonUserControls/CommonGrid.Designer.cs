@@ -103,10 +103,13 @@
 			this.gridColumn7.FieldName = "Amount";
 			this.gridColumn7.Name = "gridColumn7";
 			this.gridColumn7.OptionsColumn.AllowEdit = false;
+			this.gridColumn7.OptionsColumn.FixedWidth = true;
 			this.gridColumn7.OptionsColumn.ReadOnly = true;
+			this.gridColumn7.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Amount", "SUM={0:#,##0.##}")});
 			this.gridColumn7.Visible = true;
 			this.gridColumn7.VisibleIndex = 0;
-			this.gridColumn7.Width = 200;
+			this.gridColumn7.Width = 250;
 			// 
 			// gridColumn2
 			// 
@@ -128,10 +131,11 @@
 			this.gridColumn2.FieldName = "Date";
 			this.gridColumn2.Name = "gridColumn2";
 			this.gridColumn2.OptionsColumn.AllowEdit = false;
+			this.gridColumn2.OptionsColumn.FixedWidth = true;
 			this.gridColumn2.OptionsColumn.ReadOnly = true;
 			this.gridColumn2.Visible = true;
 			this.gridColumn2.VisibleIndex = 1;
-			this.gridColumn2.Width = 140;
+			this.gridColumn2.Width = 130;
 			// 
 			// gridColumn6
 			// 
@@ -153,10 +157,11 @@
 			this.gridColumn6.FieldName = "DailyTransactionTypeName";
 			this.gridColumn6.Name = "gridColumn6";
 			this.gridColumn6.OptionsColumn.AllowEdit = false;
+			this.gridColumn6.OptionsColumn.FixedWidth = true;
 			this.gridColumn6.OptionsColumn.ReadOnly = true;
 			this.gridColumn6.Visible = true;
 			this.gridColumn6.VisibleIndex = 2;
-			this.gridColumn6.Width = 150;
+			this.gridColumn6.Width = 120;
 			// 
 			// gridColumn5
 			// 
@@ -175,13 +180,14 @@
 			this.gridColumn5.AppearanceHeader.Options.UseTextOptions = true;
 			this.gridColumn5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
 			this.gridColumn5.Caption = "المـلاحظـــــــات";
-			this.gridColumn5.FieldName = "SupplierName";
+			this.gridColumn5.FieldName = "Description";
 			this.gridColumn5.Name = "gridColumn5";
 			this.gridColumn5.OptionsColumn.AllowEdit = false;
+			this.gridColumn5.OptionsColumn.FixedWidth = true;
 			this.gridColumn5.OptionsColumn.ReadOnly = true;
 			this.gridColumn5.Visible = true;
 			this.gridColumn5.VisibleIndex = 3;
-			this.gridColumn5.Width = 368;
+			this.gridColumn5.Width = 300;
 			// 
 			// gridColumn4
 			// 
@@ -200,7 +206,7 @@
 			this.gridColumn4.OptionsColumn.ReadOnly = true;
 			this.gridColumn4.Visible = true;
 			this.gridColumn4.VisibleIndex = 4;
-			this.gridColumn4.Width = 44;
+			this.gridColumn4.Width = 102;
 			// 
 			// layoutControlGroup1
 			// 
@@ -247,10 +253,10 @@
 		private DevExpress.XtraGrid.GridControl gridControl1;
 		private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
 		private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-		private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
 		private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-		private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
 		private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
 		private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+		private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+		private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
 	}
 }
