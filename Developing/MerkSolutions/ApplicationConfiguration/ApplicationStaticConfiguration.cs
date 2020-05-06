@@ -29,6 +29,10 @@ namespace ApplicationConfiguration
 
 		public static int ActiveCashBoxID { get; set; }
 
+		public static List<OrganizationMachine_CashBox_cu> ActiveOrganization_CashBoxesList { get; set; }
+
+		public static CashBox_cu ActiveCashBox { get; set; }
+
 		public static int ActiveInventoryHousingID { get; set; }
 
 		public static bool CanAccessApplication

@@ -6,6 +6,13 @@ using MerkDataBaseBusinessLogicProject.MerkDataBaseBusinessLogic.MerkModelCreate
 
 namespace MerkDataBaseBusinessLogicProject
 {
+	public enum AddedType
+	{
+		AlreadyExists = 1,
+		NewelyAdded = 2,
+		Removed = 3,
+	}
+
 	public partial class CashBoxInOutTransaction : DBCommon, IDBCommon
 	{
 		MerkFinanceEntities _context;
@@ -23,19 +30,19 @@ namespace MerkDataBaseBusinessLogicProject
 
 		public override bool LoadFromDB
 		{
-			get { return false; }
+			get { return true; }
 		}
 
 		public override DBCommonEntitiesType TableType
 		{
-			get { return DBCommonEntitiesType.TransactionsEntities; }
+			get { return DBCommonEntitiesType.CustomUserEntities; }
 		}
 
 		public override bool LoadItemsList()
 		{
 			ItemsList.Clear();
 
-			ItemsList = DBContext_External.CashBoxInOutTransactions.ToList();
+			ItemsList = DBContext_External.CashBoxInOutTransactions.OrderByDescending(item => item.TranscationDate).ToList();
 			return true;
 		}
 
@@ -63,5 +70,57 @@ namespace MerkDataBaseBusinessLogicProject
 		{
 			return context.CashBoxInOutTransactions.FirstOrDefault(item => item.ID.Equals(id));
 		}
+
+		public string CashBoxTransactionTypeName
+		{
+			get
+			{
+				CashBoxTransactionType_p type = CashBoxTransactionType_p.ItemsList.Find(item =>
+					Convert.ToInt32(item.ID).Equals(Convert.ToInt32(CashBoxTransactionType_P_ID)));
+				if (type != null)
+					return type.Name_P;
+				return null;
+			}
+		}
+
+		public string UserName
+		{
+			get
+			{
+				User_cu user =
+					User_cu.ItemsList.Find(item => Convert.ToInt32(item.ID).Equals(Convert.ToInt32(InsertedBy)));
+				if (user != null)
+					return user.FullName.ToString();
+				return null;
+			}
+		}
+
+		public string TranslatedAmount
+		{
+			get
+			{
+				if (Convert.ToInt32(CashBoxTransactionType_P_ID) == (int) DB_CashBoxTransactionType.ExpenseWithdraw ||
+				    Convert.ToInt32(CashBoxTransactionType_P_ID) ==
+				    (int) DB_CashBoxTransactionType.ReverseRevenueDeposit)
+						return "( " + TransactionAmount + " )";
+				return TransactionAmount.ToString();
+			}
+		}
+
+		public string CashBoxName
+		{
+			get
+			{
+				if (CashBox_CU_ID == null)
+					return "";
+				CashBox_cu cashBox = CashBox_cu.ItemsList.Find(item =>
+					Convert.ToInt32(item.ID).Equals(Convert.ToInt32(CashBox_CU_ID)));
+				if (cashBox == null)
+					return "";
+				return cashBox.CashBoxFullName;
+			}
+		}
+
+		public AddedType AddedType { get; set; }
 	}
 }

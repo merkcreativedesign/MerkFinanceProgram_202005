@@ -23,14 +23,14 @@ namespace MerkDataBaseBusinessLogicProject
         public int ID { get; set; }
         public System.DateTime TranscationDate { get; set; }
         public int CashBoxTransactionType_P_ID { get; set; }
-        public int ChartOfAccount_CU_ID { get; set; }
-        public int GeneralChartOfAccountType_CU_ID { get; set; }
+        public Nullable<int> ChartOfAccount_CU_ID { get; set; }
+        public Nullable<int> GeneralChartOfAccountType_CU_ID { get; set; }
         public double TransactionAmount { get; set; }
         public int PaymentType_P_ID { get; set; }
         public Nullable<int> CashBox_CU_ID { get; set; }
         public Nullable<int> Bank_CU_ID { get; set; }
         public Nullable<int> BankAccount_CU_ID { get; set; }
-        public int Currency_CU_ID { get; set; }
+        public Nullable<int> Currency_CU_ID { get; set; }
         public Nullable<double> CurrencyExchangeRate { get; set; }
         public string TranscationSerial { get; set; }
         public bool IsOnDuty { get; set; }

@@ -18,6 +18,7 @@ namespace MerkDataBaseBusinessLogicProject
         public CashBox_cu()
         {
             this.CashBoxInOutTransactions = new HashSet<CashBoxInOutTransaction>();
+            this.OrganizationMachine_CashBox_cu = new HashSet<OrganizationMachine_CashBox_cu>();
         }
     
         public int ID { get; set; }
@@ -36,5 +37,7 @@ namespace MerkDataBaseBusinessLogicProject
         public virtual User_cu User_cu { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CashBoxInOutTransaction> CashBoxInOutTransactions { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OrganizationMachine_CashBox_cu> OrganizationMachine_CashBox_cu { get; set; }
     }
 }
