@@ -125,6 +125,7 @@
     <Compile Include="MVCDataCollectors\AbstractDataCollector.cs" />
     <Compile Include="MVCDataCollectors\BankAccount_DataCollector.cs" />
     <Compile Include="MVCDataCollectors\Bank_DataCollector.cs" />
+    <Compile Include="MVCDataCollectors\CashBoxInOutTransaction_DataCollector.cs" />
     <Compile Include="MVCDataCollectors\CashBoxTransactionType_GeneralChartOfAccountType_DataCollector.cs" />
     <Compile Include="MVCDataCollectors\CashBox_DataCollector.cs" />
     <Compile Include="MVCDataCollectors\ChartOfAccount_DataCollector.cs" />
@@ -207,6 +208,7 @@
     </Compile>
     <Compile Include="Viewers\IBankAccountViewer.cs" />
     <Compile Include="Viewers\IBankViewer.cs" />
+    <Compile Include="Viewers\ICashBoxInOutTransactionViewer.cs" />
     <Compile Include="Viewers\ICashBoxTransactionType_GeneralChartOfAccountType_Viewer.cs" />
     <Compile Include="Viewers\ICashBoxViewer.cs" />
     <Compile Include="Viewers\IChartOfAccountViewer.cs" />

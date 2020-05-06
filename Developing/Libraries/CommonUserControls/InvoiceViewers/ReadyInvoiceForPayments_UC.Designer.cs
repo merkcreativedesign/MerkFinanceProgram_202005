@@ -177,7 +177,7 @@
 			// layoutViewField_gridColumn1
 			// 
 			this.layoutViewField_gridColumn1.EditorPreferredWidth = 109;
-			this.layoutViewField_gridColumn1.Location = new System.Drawing.Point(0, 0);
+			this.layoutViewField_gridColumn1.Location = new System.Drawing.Point(125, 0);
 			this.layoutViewField_gridColumn1.Name = "layoutViewField_gridColumn1";
 			this.layoutViewField_gridColumn1.Size = new System.Drawing.Size(211, 28);
 			this.layoutViewField_gridColumn1.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
@@ -252,7 +252,7 @@
 			// layoutViewField_gridColumn3
 			// 
 			this.layoutViewField_gridColumn3.EditorPreferredWidth = 85;
-			this.layoutViewField_gridColumn3.Location = new System.Drawing.Point(0, 84);
+			this.layoutViewField_gridColumn3.Location = new System.Drawing.Point(149, 84);
 			this.layoutViewField_gridColumn3.Name = "layoutViewField_gridColumn3";
 			this.layoutViewField_gridColumn3.Size = new System.Drawing.Size(187, 28);
 			this.layoutViewField_gridColumn3.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
@@ -273,7 +273,7 @@
 			// layoutViewField_gridColumn8
 			// 
 			this.layoutViewField_gridColumn8.EditorPreferredWidth = 47;
-			this.layoutViewField_gridColumn8.Location = new System.Drawing.Point(187, 84);
+			this.layoutViewField_gridColumn8.Location = new System.Drawing.Point(0, 84);
 			this.layoutViewField_gridColumn8.Name = "layoutViewField_gridColumn8";
 			this.layoutViewField_gridColumn8.Size = new System.Drawing.Size(149, 28);
 			this.layoutViewField_gridColumn8.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
@@ -291,7 +291,7 @@
 			// layoutViewField_layoutViewColumn1
 			// 
 			this.layoutViewField_layoutViewColumn1.EditorPreferredWidth = 82;
-			this.layoutViewField_layoutViewColumn1.Location = new System.Drawing.Point(154, 112);
+			this.layoutViewField_layoutViewColumn1.Location = new System.Drawing.Point(0, 112);
 			this.layoutViewField_layoutViewColumn1.MaxSize = new System.Drawing.Size(155, 26);
 			this.layoutViewField_layoutViewColumn1.MinSize = new System.Drawing.Size(155, 26);
 			this.layoutViewField_layoutViewColumn1.Name = "layoutViewField_layoutViewColumn1";
@@ -321,7 +321,7 @@
 			// layoutViewField_layoutViewColumn2
 			// 
 			this.layoutViewField_layoutViewColumn2.EditorPreferredWidth = 54;
-			this.layoutViewField_layoutViewColumn2.Location = new System.Drawing.Point(0, 112);
+			this.layoutViewField_layoutViewColumn2.Location = new System.Drawing.Point(182, 112);
 			this.layoutViewField_layoutViewColumn2.MaxSize = new System.Drawing.Size(154, 26);
 			this.layoutViewField_layoutViewColumn2.MinSize = new System.Drawing.Size(154, 26);
 			this.layoutViewField_layoutViewColumn2.Name = "layoutViewField_layoutViewColumn2";
@@ -343,7 +343,7 @@
 			// layoutViewField_layoutViewColumn3
 			// 
 			this.layoutViewField_layoutViewColumn3.EditorPreferredWidth = 67;
-			this.layoutViewField_layoutViewColumn3.Location = new System.Drawing.Point(0, 138);
+			this.layoutViewField_layoutViewColumn3.Location = new System.Drawing.Point(169, 138);
 			this.layoutViewField_layoutViewColumn3.Name = "layoutViewField_layoutViewColumn3";
 			this.layoutViewField_layoutViewColumn3.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
 			this.layoutViewField_layoutViewColumn3.Size = new System.Drawing.Size(167, 36);
@@ -375,7 +375,7 @@
 			// 
 			this.item1.AllowHotTrack = false;
 			this.item1.CustomizationFormText = "item1";
-			this.item1.Location = new System.Drawing.Point(167, 138);
+			this.item1.Location = new System.Drawing.Point(0, 138);
 			this.item1.Name = "item1";
 			this.item1.Size = new System.Drawing.Size(169, 36);
 			this.item1.TextSize = new System.Drawing.Size(0, 0);
@@ -384,7 +384,7 @@
 			// 
 			this.item2.AllowHotTrack = false;
 			this.item2.CustomizationFormText = "item2";
-			this.item2.Location = new System.Drawing.Point(211, 0);
+			this.item2.Location = new System.Drawing.Point(0, 0);
 			this.item2.Name = "item2";
 			this.item2.Size = new System.Drawing.Size(125, 28);
 			this.item2.TextSize = new System.Drawing.Size(0, 0);

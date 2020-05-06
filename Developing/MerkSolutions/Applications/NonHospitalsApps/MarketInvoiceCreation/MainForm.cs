@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 using CommonControlLibrary;
+using CommonUserControls.InvoiceViewers.MarketInvoice;
 using MerkDataBaseBusinessLogicProject;
 
 namespace MarketInvoiceCreation
@@ -36,6 +39,13 @@ namespace MarketInvoiceCreation
 
 		private void btnCashBoxTransactionConatiner_Click(object sender, EventArgs e)
 		{
+			if (OrganizationMachine_CashBox_cu.ItemsList.Count == 0)
+			{
+				MessageBox.Show("يجـــب ربـــط الجهـــاز بالخـزائـــن", "لا يوجد خزينة", MessageBoxButtons.OK,
+					MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign);
+				return;
+			}
+
 			CommonViewsActions.ShowUserControl(ref _cashBoxTransactionContainer, pnlMain);
 		}
 

@@ -17,6 +17,7 @@ namespace MerkDataBaseBusinessLogicProject
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public OrganizationMachine_cu()
         {
+            this.OrganizationMachine_CashBox_cu = new HashSet<OrganizationMachine_CashBox_cu>();
             this.OrganizationMachine_StationPoint_cu = new HashSet<OrganizationMachine_StationPoint_cu>();
         }
     
@@ -29,6 +30,8 @@ namespace MerkDataBaseBusinessLogicProject
         public Nullable<int> InsertedBy { get; set; }
     
         public virtual Organization_p Organization_p { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OrganizationMachine_CashBox_cu> OrganizationMachine_CashBox_cu { get; set; }
         public virtual User_UserGroup_cu User_UserGroup_cu { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrganizationMachine_StationPoint_cu> OrganizationMachine_StationPoint_cu { get; set; }

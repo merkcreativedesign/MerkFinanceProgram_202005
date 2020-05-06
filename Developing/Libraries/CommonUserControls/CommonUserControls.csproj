@@ -203,6 +203,24 @@
     <Compile Include="InvoiceViewers\InvoicePayment_UC.Designer.cs">
       <DependentUpon>InvoicePayment_UC.cs</DependentUpon>
     </Compile>
+    <Compile Include="InvoiceViewers\MarketInvoice\CashBoxTransactionContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InvoiceViewers\MarketInvoice\CashBoxTransactionContainer.Designer.cs">
+      <DependentUpon>CashBoxTransactionContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceViewers\MarketInvoice\ChooseCashBox_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InvoiceViewers\MarketInvoice\ChooseCashBox_UC.Designer.cs">
+      <DependentUpon>ChooseCashBox_UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceViewers\MarketInvoice\DailyTransactions_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InvoiceViewers\MarketInvoice\DailyTransactions_UC.Designer.cs">
+      <DependentUpon>DailyTransactions_UC.cs</DependentUpon>
+    </Compile>
     <Compile Include="InvoiceViewers\MarketInvoice\MarketCreationFinanceInvoice_UC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1432,6 +1450,15 @@
     <EmbeddedResource Include="InvoiceViewers\InvoicePayment_UC.resx">
       <DependentUpon>InvoicePayment_UC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InvoiceViewers\MarketInvoice\CashBoxTransactionContainer.resx">
+      <DependentUpon>CashBoxTransactionContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvoiceViewers\MarketInvoice\ChooseCashBox_UC.resx">
+      <DependentUpon>ChooseCashBox_UC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvoiceViewers\MarketInvoice\DailyTransactions_UC.resx">
+      <DependentUpon>DailyTransactions_UC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InvoiceViewers\MarketInvoice\MarketCreationFinanceInvoice_UC.resx">
       <DependentUpon>MarketCreationFinanceInvoice_UC.cs</DependentUpon>
     </EmbeddedResource>
@@ -2038,6 +2065,10 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\grd_ChooseCashBox.xml" />
+    <None Include="Resources\lyt_ChooseCashBox.xml" />
+    <None Include="Resources\grd_CashBoxInOutTransaction_Viewer.xml" />
+    <None Include="Resources\lyt_CashBoxInOutTransaction_Viewer.xml" />
     <None Include="Resources\grd_FinanceDailyTransaction_SearchViewer.xml" />
     <None Include="Resources\lyt_FinanceDailyTransaction_EditorViewer.xml" />
     <None Include="Resources\lyt_ReviewInventoryItemsDetails_UC.xml" />
@@ -2400,6 +2431,9 @@
     <None Include="Resources\EOM_OS_16_01.png" />
     <None Include="Resources\EOM_16_01.png" />
     <None Include="Resources\EOM_16_02.png" />
+    <None Include="Resources\CashReturning_16_01.png" />
+    <None Include="Resources\CashReturning_16_02.png" />
+    <None Include="Resources\CashBox_16_02.png" />
     <Content Include="Resources\ExitIcon_8.png" />
     <None Include="Resources\RemoveFrom_16_01.png" />
     <None Include="Resources\StopIcon_8.png" />

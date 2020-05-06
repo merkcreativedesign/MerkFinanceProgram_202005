@@ -75,12 +75,6 @@
     <Compile Include="AccountingTransactionContainer_UC.Designer.cs">
       <DependentUpon>AccountingTransactionContainer_UC.cs</DependentUpon>
     </Compile>
-    <Compile Include="CashBoxTransactionContainer.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CashBoxTransactionContainer.Designer.cs">
-      <DependentUpon>CashBoxTransactionContainer.cs</DependentUpon>
-    </Compile>
     <Compile Include="InvoiceActions_UC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -103,9 +97,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AccountingTransactionContainer_UC.resx">
       <DependentUpon>AccountingTransactionContainer_UC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CashBoxTransactionContainer.resx">
-      <DependentUpon>CashBoxTransactionContainer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InvoiceActions_UC.resx">
       <DependentUpon>InvoiceActions_UC.cs</DependentUpon>
@@ -199,6 +190,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\CashReturning_16_02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh_24_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh_16_01.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

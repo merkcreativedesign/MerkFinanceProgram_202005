@@ -117,50 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="InvoiceOutIcon_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\InvoiceOutIcon_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="InvoicesReportsIcon_16_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\InvoicesReportsIcon_16_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="InvetoryItemIcon_16_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\InvetoryItemIcon_16_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="InvoiceInIcon_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\InvoiceInIcon_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="InvoicesReportsIcon_16_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\InvoicesReportsIcon_16_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="InvetoryItemIcon_8_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\InvetoryItemIcon_8_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CashReturning_16_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CashReturning_16_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CashReturning_16_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CashReturning_16_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="InvoiceReturnOut_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\InvoiceReturnOut_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Refresh_24_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Refresh_24_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Refresh_16_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Refresh_16_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CashBox_16_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CashBox_16_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="InvoiceReturnIn_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\InvoiceReturnIn_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CashBox_16_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CashBox_16_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Refresh_16_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Refresh_16_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnClose.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAX
+        EgAAFxIBZ5/SUgAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAD1SURBVDhPjZPB
+        EYIwEEUtgQI8ePDmhRIogRIogRIowRIogZNnS6AEG3CGApyJ/zHZuHECenjM5O/fn4QkhxBCkdftUotF
+        zKIqeaAogpoGESJNyQPr53k8V2IAK5QCVO/EIu5iXZUFIARgDBsBySdmNEs18VdA5hUt4uyEcS8ghkze
+        j2ADqP8IaJ1/zgLMBFsB4Hv2AtrYzF04+ZrvyQYibQFiSKbJ47ewIPifOHlzCXn8UU4IvROgLzWCauOX
+        t7OCXwUwC2feRJjkITIPvRZQC66oN+zBhJ+rHEN4D35/W1xFep0pwFCRJbNXv2RmpDE7zhDC4Q3wuGuo
+        NgSkKQAAAABJRU5ErkJggg==
+</value>
   </data>
 </root>

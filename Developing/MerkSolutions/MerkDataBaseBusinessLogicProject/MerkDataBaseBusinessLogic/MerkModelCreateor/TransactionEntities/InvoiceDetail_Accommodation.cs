@@ -98,7 +98,7 @@ namespace MerkDataBaseBusinessLogicProject
 			get
 			{
 				return Math.Round(FinancialBusinessLogicLibrary.CalculateInvoiceDetail_Item(ParentInvoiceObject, this,
-					PriceType.SurchargeAmount_PatientShare), 2);
+					FinancialBusinessLogicLibrary.PriceType.SurchargeAmount_PatientShare), 2);
 			}
 		}
 
@@ -107,7 +107,7 @@ namespace MerkDataBaseBusinessLogicProject
 			get
 			{
 				return Math.Round(FinancialBusinessLogicLibrary.CalculateInvoiceDetail_Item(ParentInvoiceObject, this,
-					PriceType.SurchargeAmount_InsuranceShare), 2);
+					FinancialBusinessLogicLibrary.PriceType.SurchargeAmount_InsuranceShare), 2);
 			}
 		}
 
@@ -117,9 +117,9 @@ namespace MerkDataBaseBusinessLogicProject
 			{
 				return
 					FinancialBusinessLogicLibrary.CalculateInvoiceDetail_Item(ParentInvoiceObject, this,
-						PriceType.SurchargeAmount_PatientShare) +
+						FinancialBusinessLogicLibrary.PriceType.SurchargeAmount_PatientShare) +
 					FinancialBusinessLogicLibrary.CalculateInvoiceDetail_Item(ParentInvoiceObject, this,
-						PriceType.SurchargeAmount_InsuranceShare);
+						FinancialBusinessLogicLibrary.PriceType.SurchargeAmount_InsuranceShare);
 			}
 			set { SurchargeAmount = value; }
 		}

@@ -14,23 +14,20 @@ namespace MarketInvoiceCreation
 {
 	static class Program
 	{
-		/// <summary>
-		/// The main entry point for the application.
-		/// </summary>
 		[STAThread]
 		static void Main()
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
+
 			BonusSkins.Register();
 			SkinManager.EnableFormSkins();
+
 			UserLookAndFeel.Default.SetSkinStyle("Office 2010 Black");
 			UserLookAndFeel.Default.SkinMaskColor = Color.FromArgb(50, 59, 74);
 
 			DialogResult result = DialogResult.None;
-			ApplicationStaticConfiguration.Application = DB_Application.AllReception;
-			ApplicationStaticConfiguration.Organization = DB_Organization.AvvaAbraam;
-
+			ApplicationStaticConfiguration.Application = DB_Application.MerkFinance;
 			if (ApplicationStaticConfiguration.LoadApplicationConfiguration())
 			{
 				DBBusinessLogicLibrary.LoadDBItemsList();
@@ -40,7 +37,14 @@ namespace MarketInvoiceCreation
 			switch (result)
 			{
 				case DialogResult.OK:
-					DBBusinessLogicLibrary.LoadDBItemsList();
+					UserLookAndFeel.Default.SetSkinStyle(ApplicationStaticConfiguration.SkinName);
+					if (ApplicationStaticConfiguration.SkinColor != null)
+						UserLookAndFeel.Default.SkinMaskColor = Color.FromArgb(
+							((Color)ApplicationStaticConfiguration.SkinColor).R,
+							((Color)ApplicationStaticConfiguration.SkinColor).G,
+							((Color)ApplicationStaticConfiguration.SkinColor).B);
+
+					ApplicationStaticConfiguration.SaveLoggingHistory();
 					Application.Run(new MainForm());
 					break;
 				case DialogResult.Cancel:

@@ -862,4 +862,16 @@
   <data name="grd_FinanceDailyTransaction_SearchViewer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>grd_FinanceDailyTransaction_SearchViewer.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="lyt_CashBoxInOutTransaction_Viewer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>lyt_CashBoxInOutTransaction_Viewer.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="grd_CashBoxInOutTransaction_Viewer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>grd_CashBoxInOutTransaction_Viewer.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="grd_ChooseCashBox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>grd_ChooseCashBox.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="lyt_ChooseCashBox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>lyt_ChooseCashBox.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

@@ -92,7 +92,7 @@
 			// btnSellingInvoice
 			// 
 			this.btnSellingInvoice.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-			this.btnSellingInvoice.Appearance.ForeColor = System.Drawing.Color.White;
+			this.btnSellingInvoice.Appearance.ForeColor = System.Drawing.Color.Navy;
 			this.btnSellingInvoice.Appearance.Options.UseFont = true;
 			this.btnSellingInvoice.Appearance.Options.UseForeColor = true;
 			this.btnSellingInvoice.Appearance.Options.UseTextOptions = true;
@@ -112,7 +112,7 @@
 			// btnInventoryTransactionBalance
 			// 
 			this.btnInventoryTransactionBalance.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-			this.btnInventoryTransactionBalance.Appearance.ForeColor = System.Drawing.Color.White;
+			this.btnInventoryTransactionBalance.Appearance.ForeColor = System.Drawing.Color.Navy;
 			this.btnInventoryTransactionBalance.Appearance.Options.UseFont = true;
 			this.btnInventoryTransactionBalance.Appearance.Options.UseForeColor = true;
 			this.btnInventoryTransactionBalance.Appearance.Options.UseTextOptions = true;
@@ -131,7 +131,7 @@
 			// btnReturningSellingInvoice
 			// 
 			this.btnReturningSellingInvoice.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-			this.btnReturningSellingInvoice.Appearance.ForeColor = System.Drawing.Color.White;
+			this.btnReturningSellingInvoice.Appearance.ForeColor = System.Drawing.Color.Navy;
 			this.btnReturningSellingInvoice.Appearance.Options.UseFont = true;
 			this.btnReturningSellingInvoice.Appearance.Options.UseForeColor = true;
 			this.btnReturningSellingInvoice.Appearance.Options.UseTextOptions = true;
@@ -151,7 +151,7 @@
 			// btnReturningPurchasingInvoice
 			// 
 			this.btnReturningPurchasingInvoice.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-			this.btnReturningPurchasingInvoice.Appearance.ForeColor = System.Drawing.Color.White;
+			this.btnReturningPurchasingInvoice.Appearance.ForeColor = System.Drawing.Color.Navy;
 			this.btnReturningPurchasingInvoice.Appearance.Options.UseFont = true;
 			this.btnReturningPurchasingInvoice.Appearance.Options.UseForeColor = true;
 			this.btnReturningPurchasingInvoice.Appearance.Options.UseTextOptions = true;
@@ -171,7 +171,7 @@
 			// btnPurchasingInvoice
 			// 
 			this.btnPurchasingInvoice.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-			this.btnPurchasingInvoice.Appearance.ForeColor = System.Drawing.Color.White;
+			this.btnPurchasingInvoice.Appearance.ForeColor = System.Drawing.Color.Navy;
 			this.btnPurchasingInvoice.Appearance.Options.UseFont = true;
 			this.btnPurchasingInvoice.Appearance.Options.UseForeColor = true;
 			this.btnPurchasingInvoice.Appearance.Options.UseTextOptions = true;
@@ -262,7 +262,7 @@
 			// layoutControlGroup2
 			// 
 			this.layoutControlGroup2.AppearanceGroup.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-			this.layoutControlGroup2.AppearanceGroup.ForeColor = System.Drawing.Color.White;
+			this.layoutControlGroup2.AppearanceGroup.ForeColor = System.Drawing.Color.Maroon;
 			this.layoutControlGroup2.AppearanceGroup.Options.UseFont = true;
 			this.layoutControlGroup2.AppearanceGroup.Options.UseForeColor = true;
 			this.layoutControlGroup2.AppearanceGroup.Options.UseTextOptions = true;

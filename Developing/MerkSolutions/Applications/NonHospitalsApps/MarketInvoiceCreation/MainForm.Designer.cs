@@ -124,7 +124,7 @@
 			// btnAccountingTransactions
 			// 
 			this.btnAccountingTransactions.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-			this.btnAccountingTransactions.Appearance.ForeColor = System.Drawing.Color.White;
+			this.btnAccountingTransactions.Appearance.ForeColor = System.Drawing.Color.Navy;
 			this.btnAccountingTransactions.Appearance.Options.UseFont = true;
 			this.btnAccountingTransactions.Appearance.Options.UseForeColor = true;
 			this.btnAccountingTransactions.Image = global::MarketInvoiceCreation.Properties.Resources.CashBox_16_02;
@@ -142,7 +142,7 @@
 			// btnCashBoxTransactionConatiner
 			// 
 			this.btnCashBoxTransactionConatiner.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-			this.btnCashBoxTransactionConatiner.Appearance.ForeColor = System.Drawing.Color.White;
+			this.btnCashBoxTransactionConatiner.Appearance.ForeColor = System.Drawing.Color.Navy;
 			this.btnCashBoxTransactionConatiner.Appearance.Options.UseFont = true;
 			this.btnCashBoxTransactionConatiner.Appearance.Options.UseForeColor = true;
 			this.btnCashBoxTransactionConatiner.Image = global::MarketInvoiceCreation.Properties.Resources.CashBox_16_02;
@@ -160,7 +160,7 @@
 			// btnInvoiceReport
 			// 
 			this.btnInvoiceReport.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-			this.btnInvoiceReport.Appearance.ForeColor = System.Drawing.Color.White;
+			this.btnInvoiceReport.Appearance.ForeColor = System.Drawing.Color.Navy;
 			this.btnInvoiceReport.Appearance.Options.UseFont = true;
 			this.btnInvoiceReport.Appearance.Options.UseForeColor = true;
 			this.btnInvoiceReport.Image = global::MarketInvoiceCreation.Properties.Resources.InvoicesReportsIcon_16_02;
@@ -178,7 +178,7 @@
 			// btnInvoiceActions
 			// 
 			this.btnInvoiceActions.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-			this.btnInvoiceActions.Appearance.ForeColor = System.Drawing.Color.White;
+			this.btnInvoiceActions.Appearance.ForeColor = System.Drawing.Color.Navy;
 			this.btnInvoiceActions.Appearance.Options.UseFont = true;
 			this.btnInvoiceActions.Appearance.Options.UseForeColor = true;
 			this.btnInvoiceActions.Image = global::MarketInvoiceCreation.Properties.Resources.InvetoryItemIcon_16_01;
@@ -196,7 +196,7 @@
 			// btnFinancialInterval
 			// 
 			this.btnFinancialInterval.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-			this.btnFinancialInterval.Appearance.ForeColor = System.Drawing.Color.Yellow;
+			this.btnFinancialInterval.Appearance.ForeColor = System.Drawing.Color.Navy;
 			this.btnFinancialInterval.Appearance.Options.UseFont = true;
 			this.btnFinancialInterval.Appearance.Options.UseForeColor = true;
 			this.btnFinancialInterval.Appearance.Options.UseTextOptions = true;

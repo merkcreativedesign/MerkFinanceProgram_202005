@@ -5,20 +5,44 @@ using MerkDataBaseBusinessLogicProject.MerkDataBaseBusinessLogic.MerkModelCreate
 
 namespace MerkDataBaseBusinessLogicProject.EntitiesOperationsBusinessLogicLibrary
 {
-	public enum PriceType
-	{
-		PatientShare = 1,
-		InsuranceShare = 2,
-		TotalServicePriceBeforeSurcharges = 3,
-		SurchargeAmount_PatientShare = 4,
-		SurchargeAmount_InsuranceShare = 5,
-		TotalSurchargeAmount = 6,
- 		TotalServicePriceAfterSurcharges = 7,
-		PatientShareDiscountAmount = 8
-	}
-
 	public class FinancialBusinessLogicLibrary
 	{
+		public enum PriceType
+		{
+			PatientShare = 1,
+			InsuranceShare = 2,
+			TotalServicePriceBeforeSurcharges = 3,
+			SurchargeAmount_PatientShare = 4,
+			SurchargeAmount_InsuranceShare = 5,
+			TotalSurchargeAmount = 6,
+			TotalServicePriceAfterSurcharges = 7,
+			PatientShareDiscountAmount = 8
+		}
+
+		public enum CustomerBalanceType
+		{
+			None = 0,
+			NetBalance = 1,
+			TotalBalance = 2
+		}
+
+		public enum SerialType
+		{
+			CashBoxTransactionInOutExpenses = 1,
+			CashBoxTransactionInOutDeposit = 2
+		}
+
+		public enum CashBoxBalanceType
+		{
+			Net = 1,
+			NetTodayOnly = 2,
+			NetSpecificDate = 3,
+			AllDebitOnly = 4,
+			AllCreditOnly = 5,
+			TodayDebit = 6,
+			TodayCredit = 7
+		}
+
 		public static double CalculateInvoice_Totals(Invoice invoice, PriceType priceType)
 		{
 			if (invoice == null)
@@ -914,13 +938,6 @@ namespace MerkDataBaseBusinessLogicProject.EntitiesOperationsBusinessLogicLibrar
 			return total;
 		}
 
-		public enum CustomerBalanceType
-		{
-			None = 0,
-			NetBalance = 1,
-			TotalBalance = 2
-		}
-
 		public static double GetCustomerBalance(CustomerBalanceType customerBalanceType, object invoiceTypeID,
 			object customerID)
 		{
@@ -1043,6 +1060,100 @@ namespace MerkDataBaseBusinessLogicProject.EntitiesOperationsBusinessLogicLibrar
 				serial = strArry[0];
 
 			return serial;
+		}
+
+		public static string GetNextCashBoxInOutTransactionSerial(SerialType serialType, List<CashBoxInOutTransaction> list)
+		{
+			string serial = "" ;
+			DateTime date = DateTime.Now;
+			string month = "";
+			string day = "";
+			int maxCount = 0;
+			switch (serialType)
+			{
+				case SerialType.CashBoxTransactionInOutExpenses:
+					serial = "10";
+					break;
+				case SerialType.CashBoxTransactionInOutDeposit:
+					serial = "20";
+					break;
+			}
+
+			date = DateTime.Now;
+
+			if (date.Month >= 1 && date.Month <= 9)
+				month = "0" + date.Month.ToString();
+			else
+				month = date.Month.ToString();
+
+			if (date.Day >= 1 && date.Day <= 9)
+				day = "0" + date.Day.ToString();
+			else
+				day = date.Day.ToString();
+
+			serial += month + day + 2;
+			maxCount = list.Count;
+			serial +=  maxCount;
+
+			return serial;
+		}
+
+		public static List<CashBox_cu> GetOrganizationMachineCashBoxes(OrganizationMachine_cu organizationMachine)
+		{
+			if (organizationMachine == null)
+				return null;
+
+			List<CashBox_cu> list = new List<CashBox_cu>();
+			List<OrganizationMachine_CashBox_cu> oragnizationCashBoxesList =
+				OrganizationMachine_CashBox_cu.ItemsList.FindAll(item =>
+					Convert.ToInt32(item.OrganizationMachine_CU_ID).Equals(Convert.ToInt32(organizationMachine.ID)));
+			if (oragnizationCashBoxesList == null || oragnizationCashBoxesList.Count == 0)
+				return null;
+			foreach (OrganizationMachine_CashBox_cu organizationMachineCashBoxCu in oragnizationCashBoxesList)
+			{
+				CashBox_cu cashBox = CashBox_cu.ItemsList.Find(item =>
+					Convert.ToInt32(item.ID).Equals(Convert.ToInt32(organizationMachineCashBoxCu.CashBox_CU_ID)));
+				if(cashBox!= null)
+					list.Add(cashBox);
+			}
+			return list;
+		}
+
+		public static double GetCashBoxBalance(CashBox_cu cashBox, CashBoxBalanceType cashBoxBalanceType)
+		{
+			if (cashBox == null)
+				return 0;
+
+			List<CashBoxInOutTransaction> transactionsList = CashBoxInOutTransaction.ItemsList.FindAll(item =>
+				Convert.ToInt32(item.CashBox_CU_ID).Equals(Convert.ToInt32(cashBox.ID)));
+			if (transactionsList.Count == 0)
+				return 0;
+
+			switch (cashBoxBalanceType)
+			{
+				case CashBoxBalanceType.Net:
+					return Convert.ToDouble(transactionsList.Sum(item => item.TransactionAmount));
+				case CashBoxBalanceType.NetTodayOnly:
+					return Convert.ToDouble(transactionsList
+						.Where(item => item.TranscationDate.Day.Equals(DateTime.Now.Day))
+						.Sum(item => item.TransactionAmount));
+				case CashBoxBalanceType.AllDebitOnly:
+					return Convert.ToDouble(transactionsList.Where(item =>
+							Convert.ToInt32(item.CashBoxTransactionType_P_ID)
+								.Equals(Convert.ToInt32(DB_CashBoxTransactionType.RevenueDeposit)) || Convert
+								.ToInt32(item.CashBoxTransactionType_P_ID)
+								.Equals(Convert.ToInt32(DB_CashBoxTransactionType.ReverseExpenseWithdraw)))
+						.Sum(item => item.TransactionAmount));
+				case CashBoxBalanceType.AllCreditOnly:
+					return Convert.ToDouble(transactionsList.Where(item =>
+							Convert.ToInt32(item.CashBoxTransactionType_P_ID)
+								.Equals(Convert.ToInt32(DB_CashBoxTransactionType.ExpenseWithdraw)) || Convert
+								.ToInt32(item.CashBoxTransactionType_P_ID)
+								.Equals(Convert.ToInt32(DB_CashBoxTransactionType.ReverseRevenueDeposit)))
+						.Sum(item => item.TransactionAmount));
+			}
+
+			return 0;
 		}
 	}
 }

@@ -163,6 +163,7 @@ namespace MerkDataBaseBusinessLogicProject
         public virtual DbSet<Month_p> Month_p { get; set; }
         public virtual DbSet<NearVisiong_p> NearVisiong_p { get; set; }
         public virtual DbSet<Organization_p> Organization_p { get; set; }
+        public virtual DbSet<OrganizationMachine_CashBox_cu> OrganizationMachine_CashBox_cu { get; set; }
         public virtual DbSet<OrganizationMachine_cu> OrganizationMachine_cu { get; set; }
         public virtual DbSet<OrganizationMachine_StationPoint_cu> OrganizationMachine_StationPoint_cu { get; set; }
         public virtual DbSet<PainLevel_p> PainLevel_p { get; set; }

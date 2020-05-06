@@ -487,7 +487,8 @@
 		LoggingHistory,
 		FinanceDailyTransaction,
 		DailyTransactionType_p,
-		LoggingHostory
+		LoggingHostory,
+		OrganizationMachine_CashBox_cu
 	}
 
 	public enum DB_Station
@@ -513,6 +514,15 @@
 		CashPayment = 1,
 		CheckPayment = 2,
 		VisaPayment = 3
+	}
+
+	public enum DB_CashBoxTransactionType
+	{
+		ExpenseWithdraw = 1,
+		ReverseExpenseWithdraw = 2,
+		RevenueDeposit = 3,
+		ReverseRevenueDeposit = 4,
+		TransferToFundsCashBox
 	}
 
 	public enum DB_ServiceType

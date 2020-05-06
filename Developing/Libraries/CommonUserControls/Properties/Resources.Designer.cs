@@ -213,6 +213,36 @@ namespace CommonUserControls.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CashBox_16_02 {
+            get {
+                object obj = ResourceManager.GetObject("CashBox_16_02", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CashReturning_16_01 {
+            get {
+                object obj = ResourceManager.GetObject("CashReturning_16_01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CashReturning_16_02 {
+            get {
+                object obj = ResourceManager.GetObject("CashReturning_16_02", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Clear_1_16 {
             get {
                 object obj = ResourceManager.GetObject("Clear_1_16", resourceCulture);

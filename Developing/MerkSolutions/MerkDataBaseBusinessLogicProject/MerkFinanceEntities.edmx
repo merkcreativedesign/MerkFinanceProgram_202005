@@ -129,14 +129,14 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TranscationDate" Type="datetime" Nullable="false" />
           <Property Name="CashBoxTransactionType_P_ID" Type="int" Nullable="false" />
-          <Property Name="ChartOfAccount_CU_ID" Type="int" Nullable="false" />
-          <Property Name="GeneralChartOfAccountType_CU_ID" Type="int" Nullable="false" />
+          <Property Name="ChartOfAccount_CU_ID" Type="int" />
+          <Property Name="GeneralChartOfAccountType_CU_ID" Type="int" />
           <Property Name="TransactionAmount" Type="float" Nullable="false" />
           <Property Name="PaymentType_P_ID" Type="int" Nullable="false" />
           <Property Name="CashBox_CU_ID" Type="int" />
           <Property Name="Bank_CU_ID" Type="int" />
           <Property Name="BankAccount_CU_ID" Type="int" />
-          <Property Name="Currency_CU_ID" Type="int" Nullable="false" />
+          <Property Name="Currency_CU_ID" Type="int" />
           <Property Name="CurrencyExchangeRate" Type="float" />
           <Property Name="TranscationSerial" Type="nvarchar" MaxLength="150" />
           <Property Name="IsOnDuty" Type="bit" Nullable="false" />
@@ -1689,6 +1689,16 @@
           <Property Name="IsOnDuty" Type="bit" />
           <Property Name="Description" Type="nvarchar" MaxLength="150" />
           <Property Name="InsertedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="OrganizationMachine_CashBox_cu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrganizationMachine_CU_ID" Type="int" Nullable="false" />
+          <Property Name="CashBox_CU_ID" Type="int" Nullable="false" />
+          <Property Name="IsOnDuty" Type="bit" Nullable="false" />
+          <Property Name="InsertedBy" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="OrganizationMachine_cu">
           <Key>
@@ -3445,7 +3455,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CashBoxInOutTransaction_ChartOfAccount_cu">
-          <End Role="ChartOfAccount_cu" Type="Self.ChartOfAccount_cu" Multiplicity="1" />
+          <End Role="ChartOfAccount_cu" Type="Self.ChartOfAccount_cu" Multiplicity="0..1" />
           <End Role="CashBoxInOutTransaction" Type="Self.CashBoxInOutTransaction" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ChartOfAccount_cu">
@@ -3457,7 +3467,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CashBoxInOutTransaction_Currency_cu">
-          <End Role="Currency_cu" Type="Self.Currency_cu" Multiplicity="1" />
+          <End Role="Currency_cu" Type="Self.Currency_cu" Multiplicity="0..1" />
           <End Role="CashBoxInOutTransaction" Type="Self.CashBoxInOutTransaction" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Currency_cu">
@@ -3469,7 +3479,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CashBoxInOutTransaction_GeneralChartOfAccountType_cu">
-          <End Role="GeneralChartOfAccountType_cu" Type="Self.GeneralChartOfAccountType_cu" Multiplicity="1" />
+          <End Role="GeneralChartOfAccountType_cu" Type="Self.GeneralChartOfAccountType_cu" Multiplicity="0..1" />
           <End Role="CashBoxInOutTransaction" Type="Self.CashBoxInOutTransaction" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="GeneralChartOfAccountType_cu">
@@ -6728,6 +6738,42 @@
               <PropertyRef Name="Person_CU_ID" />
             </Principal>
             <Dependent Role="Organization_p">
+              <PropertyRef Name="InsertedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrganizationMachine_CashBox_cu_CashBox_cu">
+          <End Role="CashBox_cu" Type="Self.CashBox_cu" Multiplicity="1" />
+          <End Role="OrganizationMachine_CashBox_cu" Type="Self.OrganizationMachine_CashBox_cu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CashBox_cu">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrganizationMachine_CashBox_cu">
+              <PropertyRef Name="CashBox_CU_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrganizationMachine_CashBox_cu_OrganizationMachine_cu">
+          <End Role="OrganizationMachine_cu" Type="Self.OrganizationMachine_cu" Multiplicity="1" />
+          <End Role="OrganizationMachine_CashBox_cu" Type="Self.OrganizationMachine_CashBox_cu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrganizationMachine_cu">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrganizationMachine_CashBox_cu">
+              <PropertyRef Name="OrganizationMachine_CU_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrganizationMachine_CashBox_cu_User_cu">
+          <End Role="User_cu" Type="Self.User_cu" Multiplicity="1" />
+          <End Role="OrganizationMachine_CashBox_cu" Type="Self.OrganizationMachine_CashBox_cu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_cu">
+              <PropertyRef Name="Person_CU_ID" />
+            </Principal>
+            <Dependent Role="OrganizationMachine_CashBox_cu">
               <PropertyRef Name="InsertedBy" />
             </Dependent>
           </ReferentialConstraint>
@@ -10132,6 +10178,7 @@
           <EntitySet Name="Month_p" EntityType="Self.Month_p" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NearVisiong_p" EntityType="Self.NearVisiong_p" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Organization_p" EntityType="Self.Organization_p" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrganizationMachine_CashBox_cu" EntityType="Self.OrganizationMachine_CashBox_cu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OrganizationMachine_cu" EntityType="Self.OrganizationMachine_cu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OrganizationMachine_StationPoint_cu" EntityType="Self.OrganizationMachine_StationPoint_cu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PainLevel_p" EntityType="Self.PainLevel_p" Schema="dbo" store:Type="Tables" />
@@ -11449,6 +11496,18 @@
             <End Role="User_cu" EntitySet="User_cu" />
             <End Role="Organization_p" EntitySet="Organization_p" />
           </AssociationSet>
+          <AssociationSet Name="FK_OrganizationMachine_CashBox_cu_CashBox_cu" Association="Self.FK_OrganizationMachine_CashBox_cu_CashBox_cu">
+            <End Role="CashBox_cu" EntitySet="CashBox_cu" />
+            <End Role="OrganizationMachine_CashBox_cu" EntitySet="OrganizationMachine_CashBox_cu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrganizationMachine_CashBox_cu_OrganizationMachine_cu" Association="Self.FK_OrganizationMachine_CashBox_cu_OrganizationMachine_cu">
+            <End Role="OrganizationMachine_cu" EntitySet="OrganizationMachine_cu" />
+            <End Role="OrganizationMachine_CashBox_cu" EntitySet="OrganizationMachine_CashBox_cu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrganizationMachine_CashBox_cu_User_cu" Association="Self.FK_OrganizationMachine_CashBox_cu_User_cu">
+            <End Role="User_cu" EntitySet="User_cu" />
+            <End Role="OrganizationMachine_CashBox_cu" EntitySet="OrganizationMachine_CashBox_cu" />
+          </AssociationSet>
           <AssociationSet Name="FK_OrganizationMachine_cu_Organization_p" Association="Self.FK_OrganizationMachine_cu_Organization_p">
             <End Role="Organization_p" EntitySet="Organization_p" />
             <End Role="OrganizationMachine_cu" EntitySet="OrganizationMachine_cu" />
@@ -12645,6 +12704,7 @@
           <NavigationProperty Name="Floor_cu" Relationship="Self.FK_CashBox_cu_Floor_cu" FromRole="CashBox_cu" ToRole="Floor_cu" />
           <NavigationProperty Name="User_cu" Relationship="Self.FK_CashBox_cu_User_cu" FromRole="CashBox_cu" ToRole="User_cu" />
           <NavigationProperty Name="CashBoxInOutTransactions" Relationship="Self.FK_CashBoxInOutTransaction_CashBox_cu" FromRole="CashBox_cu" ToRole="CashBoxInOutTransaction" />
+          <NavigationProperty Name="OrganizationMachine_CashBox_cu" Relationship="Self.FK_OrganizationMachine_CashBox_cu_CashBox_cu" FromRole="CashBox_cu" ToRole="OrganizationMachine_CashBox_cu" />
         </EntityType>
         <EntityType Name="CashBoxInOutTransaction">
           <Key>
@@ -12653,14 +12713,14 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TranscationDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="CashBoxTransactionType_P_ID" Type="Int32" Nullable="false" />
-          <Property Name="ChartOfAccount_CU_ID" Type="Int32" Nullable="false" />
-          <Property Name="GeneralChartOfAccountType_CU_ID" Type="Int32" Nullable="false" />
+          <Property Name="ChartOfAccount_CU_ID" Type="Int32" />
+          <Property Name="GeneralChartOfAccountType_CU_ID" Type="Int32" />
           <Property Name="TransactionAmount" Type="Double" Nullable="false" />
           <Property Name="PaymentType_P_ID" Type="Int32" Nullable="false" />
           <Property Name="CashBox_CU_ID" Type="Int32" />
           <Property Name="Bank_CU_ID" Type="Int32" />
           <Property Name="BankAccount_CU_ID" Type="Int32" />
-          <Property Name="Currency_CU_ID" Type="Int32" Nullable="false" />
+          <Property Name="Currency_CU_ID" Type="Int32" />
           <Property Name="CurrencyExchangeRate" Type="Double" />
           <Property Name="TranscationSerial" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="IsOnDuty" Type="Boolean" Nullable="false" />
@@ -14697,6 +14757,19 @@
           <NavigationProperty Name="OrganizationMachine_cu" Relationship="Self.FK_OrganizationMachine_cu_Organization_p" FromRole="Organization_p" ToRole="OrganizationMachine_cu" />
           <NavigationProperty Name="User_cu1" Relationship="Self.FK_User_cu_Organization_cu" FromRole="Organization_p" ToRole="User_cu" />
         </EntityType>
+        <EntityType Name="OrganizationMachine_CashBox_cu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrganizationMachine_CU_ID" Type="Int32" Nullable="false" />
+          <Property Name="CashBox_CU_ID" Type="Int32" Nullable="false" />
+          <Property Name="IsOnDuty" Type="Boolean" Nullable="false" />
+          <Property Name="InsertedBy" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CashBox_cu" Relationship="Self.FK_OrganizationMachine_CashBox_cu_CashBox_cu" FromRole="OrganizationMachine_CashBox_cu" ToRole="CashBox_cu" />
+          <NavigationProperty Name="OrganizationMachine_cu" Relationship="Self.FK_OrganizationMachine_CashBox_cu_OrganizationMachine_cu" FromRole="OrganizationMachine_CashBox_cu" ToRole="OrganizationMachine_cu" />
+          <NavigationProperty Name="User_cu" Relationship="Self.FK_OrganizationMachine_CashBox_cu_User_cu" FromRole="OrganizationMachine_CashBox_cu" ToRole="User_cu" />
+        </EntityType>
         <EntityType Name="OrganizationMachine_cu">
           <Key>
             <PropertyRef Name="ID" />
@@ -14709,6 +14782,7 @@
           <Property Name="IsOnDuty" Type="Boolean" Nullable="false" />
           <Property Name="InsertedBy" Type="Int32" />
           <NavigationProperty Name="Organization_p" Relationship="Self.FK_OrganizationMachine_cu_Organization_p" FromRole="OrganizationMachine_cu" ToRole="Organization_p" />
+          <NavigationProperty Name="OrganizationMachine_CashBox_cu" Relationship="Self.FK_OrganizationMachine_CashBox_cu_OrganizationMachine_cu" FromRole="OrganizationMachine_cu" ToRole="OrganizationMachine_CashBox_cu" />
           <NavigationProperty Name="User_UserGroup_cu" Relationship="Self.FK_OrganizationMachine_cu_User_UserGroup_cu" FromRole="OrganizationMachine_cu" ToRole="User_UserGroup_cu" />
           <NavigationProperty Name="OrganizationMachine_StationPoint_cu" Relationship="Self.FK_OrganizationMachine_StationPoint_cu_OrganizationMachine_cu" FromRole="OrganizationMachine_cu" ToRole="OrganizationMachine_StationPoint_cu" />
         </EntityType>
@@ -15999,6 +16073,7 @@
           <NavigationProperty Name="MedicationCategory_cu" Relationship="Self.FK_MedicationCategory_cu_User_cu" FromRole="User_cu" ToRole="MedicationCategory_cu" />
           <NavigationProperty Name="Organization_p" Relationship="Self.FK_Organization_cu_User_cu" FromRole="User_cu" ToRole="Organization_p" />
           <NavigationProperty Name="Organization_p1" Relationship="Self.FK_User_cu_Organization_cu" FromRole="User_cu" ToRole="Organization_p" />
+          <NavigationProperty Name="OrganizationMachine_CashBox_cu" Relationship="Self.FK_OrganizationMachine_CashBox_cu_User_cu" FromRole="User_cu" ToRole="OrganizationMachine_CashBox_cu" />
           <NavigationProperty Name="OrganizationMachine_StationPoint_cu" Relationship="Self.FK_OrganizationMachine_StationPoint_cu_OrganizationMachine_StationPoint_cu" FromRole="User_cu" ToRole="OrganizationMachine_StationPoint_cu" />
           <NavigationProperty Name="Patient_cu" Relationship="Self.FK_Patient_cu_User_cu" FromRole="User_cu" ToRole="Patient_cu" />
           <NavigationProperty Name="PatientAttachment_cu" Relationship="Self.FK_PatientAttachment_User_cu" FromRole="User_cu" ToRole="PatientAttachment_cu" />
@@ -17126,6 +17201,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_OrganizationMachine_CashBox_cu_CashBox_cu">
+          <End Role="CashBox_cu" Type="Self.CashBox_cu" Multiplicity="1" />
+          <End Role="OrganizationMachine_CashBox_cu" Type="Self.OrganizationMachine_CashBox_cu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CashBox_cu">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrganizationMachine_CashBox_cu">
+              <PropertyRef Name="CashBox_CU_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_CashBoxInOutTransaction_AccountingJournalTransaction_CashBoxInOutTransaction">
           <End Role="CashBoxInOutTransaction" Type="Self.CashBoxInOutTransaction" Multiplicity="1" />
           <End Role="CashBoxInOutTransaction_AccountingJournalTransaction" Type="Self.CashBoxInOutTransaction_AccountingJournalTransaction" Multiplicity="*" />
@@ -17151,7 +17238,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CashBoxInOutTransaction_ChartOfAccount_cu">
-          <End Role="ChartOfAccount_cu" Type="Self.ChartOfAccount_cu" Multiplicity="1" />
+          <End Role="ChartOfAccount_cu" Type="Self.ChartOfAccount_cu" Multiplicity="0..1" />
           <End Role="CashBoxInOutTransaction" Type="Self.CashBoxInOutTransaction" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ChartOfAccount_cu">
@@ -17163,7 +17250,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CashBoxInOutTransaction_Currency_cu">
-          <End Role="Currency_cu" Type="Self.Currency_cu" Multiplicity="1" />
+          <End Role="Currency_cu" Type="Self.Currency_cu" Multiplicity="0..1" />
           <End Role="CashBoxInOutTransaction" Type="Self.CashBoxInOutTransaction" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Currency_cu">
@@ -17175,7 +17262,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CashBoxInOutTransaction_GeneralChartOfAccountType_cu">
-          <End Role="GeneralChartOfAccountType_cu" Type="Self.GeneralChartOfAccountType_cu" Multiplicity="1" />
+          <End Role="GeneralChartOfAccountType_cu" Type="Self.GeneralChartOfAccountType_cu" Multiplicity="0..1" />
           <End Role="CashBoxInOutTransaction" Type="Self.CashBoxInOutTransaction" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="GeneralChartOfAccountType_cu">
@@ -20942,6 +21029,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_OrganizationMachine_CashBox_cu_OrganizationMachine_cu">
+          <End Role="OrganizationMachine_cu" Type="Self.OrganizationMachine_cu" Multiplicity="1" />
+          <End Role="OrganizationMachine_CashBox_cu" Type="Self.OrganizationMachine_CashBox_cu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrganizationMachine_cu">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrganizationMachine_CashBox_cu">
+              <PropertyRef Name="OrganizationMachine_CU_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrganizationMachine_CashBox_cu_User_cu">
+          <End Role="User_cu" Type="Self.User_cu" Multiplicity="1" />
+          <End Role="OrganizationMachine_CashBox_cu" Type="Self.OrganizationMachine_CashBox_cu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_cu">
+              <PropertyRef Name="Person_CU_ID" />
+            </Principal>
+            <Dependent Role="OrganizationMachine_CashBox_cu">
+              <PropertyRef Name="InsertedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_OrganizationMachine_cu_User_UserGroup_cu">
           <End Role="User_UserGroup_cu" Type="Self.User_UserGroup_cu" Multiplicity="0..1" />
           <End Role="OrganizationMachine_cu" Type="Self.OrganizationMachine_cu" Multiplicity="*" />
@@ -23599,6 +23710,7 @@
           <EntitySet Name="Month_p" EntityType="Self.Month_p" />
           <EntitySet Name="NearVisiong_p" EntityType="Self.NearVisiong_p" />
           <EntitySet Name="Organization_p" EntityType="Self.Organization_p" />
+          <EntitySet Name="OrganizationMachine_CashBox_cu" EntityType="Self.OrganizationMachine_CashBox_cu" />
           <EntitySet Name="OrganizationMachine_cu" EntityType="Self.OrganizationMachine_cu" />
           <EntitySet Name="OrganizationMachine_StationPoint_cu" EntityType="Self.OrganizationMachine_StationPoint_cu" />
           <EntitySet Name="PainLevel_p" EntityType="Self.PainLevel_p" />
@@ -23843,6 +23955,10 @@
           <AssociationSet Name="FK_CashBoxInOutTransaction_CashBox_cu" Association="Self.FK_CashBoxInOutTransaction_CashBox_cu">
             <End Role="CashBox_cu" EntitySet="CashBox_cu" />
             <End Role="CashBoxInOutTransaction" EntitySet="CashBoxInOutTransactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrganizationMachine_CashBox_cu_CashBox_cu" Association="Self.FK_OrganizationMachine_CashBox_cu_CashBox_cu">
+            <End Role="CashBox_cu" EntitySet="CashBox_cu" />
+            <End Role="OrganizationMachine_CashBox_cu" EntitySet="OrganizationMachine_CashBox_cu" />
           </AssociationSet>
           <AssociationSet Name="FK_CashBoxInOutTransaction_AccountingJournalTransaction_CashBoxInOutTransaction" Association="Self.FK_CashBoxInOutTransaction_AccountingJournalTransaction_CashBoxInOutTransaction">
             <End Role="CashBoxInOutTransaction" EntitySet="CashBoxInOutTransactions" />
@@ -25115,6 +25231,14 @@
           <AssociationSet Name="FK_User_cu_Organization_cu" Association="Self.FK_User_cu_Organization_cu">
             <End Role="Organization_p" EntitySet="Organization_p" />
             <End Role="User_cu" EntitySet="User_cu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrganizationMachine_CashBox_cu_OrganizationMachine_cu" Association="Self.FK_OrganizationMachine_CashBox_cu_OrganizationMachine_cu">
+            <End Role="OrganizationMachine_cu" EntitySet="OrganizationMachine_cu" />
+            <End Role="OrganizationMachine_CashBox_cu" EntitySet="OrganizationMachine_CashBox_cu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrganizationMachine_CashBox_cu_User_cu" Association="Self.FK_OrganizationMachine_CashBox_cu_User_cu">
+            <End Role="User_cu" EntitySet="User_cu" />
+            <End Role="OrganizationMachine_CashBox_cu" EntitySet="OrganizationMachine_CashBox_cu" />
           </AssociationSet>
           <AssociationSet Name="FK_OrganizationMachine_cu_User_UserGroup_cu" Association="Self.FK_OrganizationMachine_cu_User_UserGroup_cu">
             <End Role="User_UserGroup_cu" EntitySet="User_UserGroup_cu" />
@@ -28097,6 +28221,17 @@
                 <ScalarProperty Name="Name_S" ColumnName="Name_S" />
                 <ScalarProperty Name="IsOnDuty" ColumnName="IsOnDuty" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrganizationMachine_CashBox_cu">
+            <EntityTypeMapping TypeName="MerkFinanceModel.OrganizationMachine_CashBox_cu">
+              <MappingFragment StoreEntitySet="OrganizationMachine_CashBox_cu">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OrganizationMachine_CU_ID" ColumnName="OrganizationMachine_CU_ID" />
+                <ScalarProperty Name="CashBox_CU_ID" ColumnName="CashBox_CU_ID" />
+                <ScalarProperty Name="IsOnDuty" ColumnName="IsOnDuty" />
                 <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
               </MappingFragment>
             </EntityTypeMapping>

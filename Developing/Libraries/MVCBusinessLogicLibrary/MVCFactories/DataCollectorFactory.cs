@@ -149,6 +149,8 @@ namespace MVCBusinessLogicLibrary.MVCFactories
 					return new GetInventoryItemCostsDetails_Report_DataCollector<TEntity>();
 				case ViewerName.FinanceDailyTransaction_Viewer:
 					return new FinanceDailyTransaction_DataCollector<TEntity>();
+				case ViewerName.CashBoxInOutTrasactionViewer:
+					return new CashBoxInOutTransaction_DataCollector<TEntity>();
 			}
 
 			return null;

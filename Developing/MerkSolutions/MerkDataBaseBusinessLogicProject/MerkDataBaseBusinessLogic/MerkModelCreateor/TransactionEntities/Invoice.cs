@@ -235,7 +235,7 @@ namespace MerkDataBaseBusinessLogicProject
 
 		public double PatientShare_BeforeAddsOn_InvoiceItem
 		{
-			get { return Math.Round(FinancialBusinessLogicLibrary.CalculateInvoice_Totals(this, PriceType.PatientShare), 2); }
+			get { return Math.Round(FinancialBusinessLogicLibrary.CalculateInvoice_Totals(this, FinancialBusinessLogicLibrary.PriceType.PatientShare), 2); }
 			set
 			{
 				if (InvoiceShareObject != null) 
@@ -245,7 +245,7 @@ namespace MerkDataBaseBusinessLogicProject
 
 		public double InsuranceShare_BeforeAddsOn_InvoiceItem
 		{
-			get { return Math.Round(FinancialBusinessLogicLibrary.CalculateInvoice_Totals(this, PriceType.InsuranceShare), 2); }
+			get { return Math.Round(FinancialBusinessLogicLibrary.CalculateInvoice_Totals(this, FinancialBusinessLogicLibrary.PriceType.InsuranceShare), 2); }
 			set
 			{
 				if (InvoiceShareObject != null)
@@ -259,7 +259,7 @@ namespace MerkDataBaseBusinessLogicProject
 			{
 				return
 					Math.Round(
-						FinancialBusinessLogicLibrary.CalculateInvoice_Totals(this, PriceType.TotalServicePriceBeforeSurcharges), 2);
+						FinancialBusinessLogicLibrary.CalculateInvoice_Totals(this, FinancialBusinessLogicLibrary.PriceType.TotalServicePriceBeforeSurcharges), 2);
 			}
 			set
 			{
@@ -278,7 +278,7 @@ namespace MerkDataBaseBusinessLogicProject
 			get
 			{
 				return
-					Math.Round(FinancialBusinessLogicLibrary.CalculateInvoice_Totals(this, PriceType.SurchargeAmount_PatientShare), 2);
+					Math.Round(FinancialBusinessLogicLibrary.CalculateInvoice_Totals(this, FinancialBusinessLogicLibrary.PriceType.SurchargeAmount_PatientShare), 2);
 			}
 		}
 
@@ -287,7 +287,7 @@ namespace MerkDataBaseBusinessLogicProject
 			get
 			{
 				return
-					Math.Round(FinancialBusinessLogicLibrary.CalculateInvoice_Totals(this, PriceType.SurchargeAmount_InsuranceShare), 2);
+					Math.Round(FinancialBusinessLogicLibrary.CalculateInvoice_Totals(this, FinancialBusinessLogicLibrary.PriceType.SurchargeAmount_InsuranceShare), 2);
 			}
 		}
 
@@ -295,7 +295,7 @@ namespace MerkDataBaseBusinessLogicProject
 		{
 			get
 			{
-				return Math.Round(FinancialBusinessLogicLibrary.CalculateInvoice_Totals(this, PriceType.TotalSurchargeAmount), 2);
+				return Math.Round(FinancialBusinessLogicLibrary.CalculateInvoice_Totals(this, FinancialBusinessLogicLibrary.PriceType.TotalSurchargeAmount), 2);
 			}
 			set
 			{

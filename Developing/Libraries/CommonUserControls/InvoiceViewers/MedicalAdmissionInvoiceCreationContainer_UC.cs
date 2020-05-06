@@ -766,7 +766,7 @@ namespace CommonUserControls.InvoiceViewers
 			chkIsInsuranceAppliedToService.Enabled = Convert.ToBoolean(IsInsuranceAppliedToInvoice);
 
 			AccummulatedServicesPrice = FinancialBusinessLogicLibrary.GetAccumulativeInvoiceDetails(Grid_InvoiceDetails,
-				PriceType.TotalServicePriceBeforeSurcharges);
+				FinancialBusinessLogicLibrary.PriceType.TotalServicePriceBeforeSurcharges);
 
 			spnAccummulatedServicesCost_PatientShare.EditValue =
 				FinancialBusinessLogicLibrary.GetAccummulativePatientShare(Grid_InvoiceDetails);
@@ -1128,7 +1128,7 @@ namespace CommonUserControls.InvoiceViewers
 				InsuranceCarrierID, InsuranceLevelID, InsurancePercentage, InsurancePatientMaxAmount);
 
 			AccummulatedServicesPrice = FinancialBusinessLogicLibrary.GetAccumulativeInvoiceDetails(Grid_InvoiceDetails,
-				PriceType.TotalServicePriceBeforeSurcharges);
+				FinancialBusinessLogicLibrary.PriceType.TotalServicePriceBeforeSurcharges);
 
 			spnAmountPaid.EditValue = spnAccummulatedServicesCost_PatientShare.EditValue =
 				FinancialBusinessLogicLibrary.GetAccummulativePatientShare(Grid_InvoiceDetails);
@@ -1169,7 +1169,7 @@ namespace CommonUserControls.InvoiceViewers
 																				InsuranceCarrierID, InsuranceLevelID, InsurancePercentage, InsurancePatientMaxAmount);
 
 			AccummulatedServicesPrice = FinancialBusinessLogicLibrary.GetAccumulativeInvoiceDetails(Grid_InvoiceDetails,
-																									PriceType.TotalServicePriceBeforeSurcharges);
+																									FinancialBusinessLogicLibrary.PriceType.TotalServicePriceBeforeSurcharges);
 
 			spnAmountPaid.EditValue = spnAccummulatedServicesCost_PatientShare.EditValue =
 				FinancialBusinessLogicLibrary.GetAccummulativePatientShare(Grid_InvoiceDetails);
@@ -1205,7 +1205,7 @@ namespace CommonUserControls.InvoiceViewers
 			}
 
 			AccummulatedServicesPrice = FinancialBusinessLogicLibrary.GetAccumulativeInvoiceDetails(Grid_InvoiceDetails,
-				PriceType.TotalServicePriceBeforeSurcharges);
+				FinancialBusinessLogicLibrary.PriceType.TotalServicePriceBeforeSurcharges);
 
 			spnAccummulatedServicesCost_PatientShare.EditValue =
 				FinancialBusinessLogicLibrary.GetAccummulativePatientShare(Grid_InvoiceDetails);

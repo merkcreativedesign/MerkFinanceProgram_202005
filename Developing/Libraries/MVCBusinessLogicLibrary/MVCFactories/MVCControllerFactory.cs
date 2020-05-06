@@ -77,7 +77,8 @@ namespace MVCBusinessLogicLibrary.MVCFactories
 		InventoryItem_Printing_Viewer,
 		InventoryItem_RawMaterial_Viewer,
 		GetInventoryItemCostsDetails_Viewer,
-		FinanceDailyTransaction_Viewer
+		FinanceDailyTransaction_Viewer,
+		CashBoxInOutTrasactionViewer
 	}
 
 	public enum MVCType
