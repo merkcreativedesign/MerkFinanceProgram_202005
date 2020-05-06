@@ -80,7 +80,7 @@ namespace CommonUserControls.InvoiceViewers.MarketInvoice
 			txtCashBoxName.Text = ApplicationStaticConfiguration.ActiveCashBox.CashBoxFullName;
 			txtNet.EditValue = (FinancialBusinessLogicLibrary.GetCashBoxBalance(
 				                    ApplicationStaticConfiguration.ActiveCashBox,
-				                    FinancialBusinessLogicLibrary.CashBoxBalanceType.AllDebitOnly) -
+				                    FinancialBusinessLogicLibrary.CashBoxBalanceType.AllDebitOnly) +
 			                    FinancialBusinessLogicLibrary.GetCashBoxBalance(
 				                    ApplicationStaticConfiguration.ActiveCashBox,
 				                    FinancialBusinessLogicLibrary.CashBoxBalanceType.AllCreditOnly));

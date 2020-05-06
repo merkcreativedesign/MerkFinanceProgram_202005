@@ -170,7 +170,7 @@
 			this.txtNet.MaximumSize = new System.Drawing.Size(0, 30);
 			this.txtNet.MinimumSize = new System.Drawing.Size(0, 30);
 			this.txtNet.Name = "txtNet";
-			this.txtNet.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.txtNet.Properties.Appearance.BackColor = System.Drawing.Color.Lime;
 			this.txtNet.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
 			this.txtNet.Properties.Appearance.ForeColor = System.Drawing.Color.WhiteSmoke;
 			this.txtNet.Properties.Appearance.Options.UseBackColor = true;
@@ -921,6 +921,8 @@
 			// 
 			// layoutControlItem15
 			// 
+			this.layoutControlItem15.AppearanceItemCaption.Options.UseTextOptions = true;
+			this.layoutControlItem15.AppearanceItemCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
 			this.layoutControlItem15.Control = this.txtNet;
 			this.layoutControlItem15.Location = new System.Drawing.Point(582, 0);
 			this.layoutControlItem15.MaxSize = new System.Drawing.Size(249, 26);

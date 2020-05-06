@@ -28,11 +28,13 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CashBoxTransactionContainer));
-			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
 			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CashBoxTransactionContainer));
+			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
 			this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+			this.spnTotalCredit = new DevExpress.XtraEditors.SpinEdit();
+			this.spnTotalDebit = new DevExpress.XtraEditors.SpinEdit();
 			this.btnRefresh2 = new DevExpress.XtraEditors.SimpleButton();
 			this.btnReturnCashBoxBalanceToMainCashBox = new DevExpress.XtraEditors.SimpleButton();
 			this.spnTotalNet = new DevExpress.XtraEditors.SpinEdit();
@@ -64,18 +66,18 @@
 			this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.simpleSeparator7 = new DevExpress.XtraLayout.SimpleSeparator();
+			this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
+			this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.simpleSeparator1 = new DevExpress.XtraLayout.SimpleSeparator();
 			this.simpleSeparator2 = new DevExpress.XtraLayout.SimpleSeparator();
 			this.simpleSeparator3 = new DevExpress.XtraLayout.SimpleSeparator();
 			this.simpleSeparator4 = new DevExpress.XtraLayout.SimpleSeparator();
 			this.simpleSeparator5 = new DevExpress.XtraLayout.SimpleSeparator();
 			this.simpleSeparator6 = new DevExpress.XtraLayout.SimpleSeparator();
-			this.spnTotalDebit = new DevExpress.XtraEditors.SpinEdit();
-			this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
-			this.spnTotalCredit = new DevExpress.XtraEditors.SpinEdit();
-			this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
 			this.layoutControl1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.spnTotalCredit.Properties)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.spnTotalDebit.Properties)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.spnTotalNet.Properties)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dtDate.Properties)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtCashBoxName.Properties)).BeginInit();
@@ -100,16 +102,14 @@
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.simpleSeparator7)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.simpleSeparator1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.simpleSeparator2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.simpleSeparator3)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.simpleSeparator4)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.simpleSeparator5)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.simpleSeparator6)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.spnTotalDebit.Properties)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.spnTotalCredit.Properties)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// layoutControl1
@@ -135,6 +135,64 @@
 			this.layoutControl1.Size = new System.Drawing.Size(1008, 549);
 			this.layoutControl1.TabIndex = 0;
 			this.layoutControl1.Text = "layoutControl1";
+			// 
+			// spnTotalCredit
+			// 
+			this.spnTotalCredit.EditValue = new decimal(new int[] {
+            565225,
+            0,
+            0,
+            196608});
+			this.spnTotalCredit.Location = new System.Drawing.Point(57, 272);
+			this.spnTotalCredit.MaximumSize = new System.Drawing.Size(200, 50);
+			this.spnTotalCredit.MinimumSize = new System.Drawing.Size(200, 50);
+			this.spnTotalCredit.Name = "spnTotalCredit";
+			this.spnTotalCredit.Properties.Appearance.BackColor = System.Drawing.Color.Red;
+			this.spnTotalCredit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+			this.spnTotalCredit.Properties.Appearance.ForeColor = System.Drawing.Color.DarkBlue;
+			this.spnTotalCredit.Properties.Appearance.Options.UseBackColor = true;
+			this.spnTotalCredit.Properties.Appearance.Options.UseFont = true;
+			this.spnTotalCredit.Properties.Appearance.Options.UseForeColor = true;
+			this.spnTotalCredit.Properties.Appearance.Options.UseTextOptions = true;
+			this.spnTotalCredit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+			this.spnTotalCredit.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+			this.spnTotalCredit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, false, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+			this.spnTotalCredit.Properties.DisplayFormat.FormatString = "d2";
+			this.spnTotalCredit.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+			this.spnTotalCredit.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.spnTotalCredit.Size = new System.Drawing.Size(200, 50);
+			this.spnTotalCredit.StyleController = this.layoutControl1;
+			this.spnTotalCredit.TabIndex = 8;
+			// 
+			// spnTotalDebit
+			// 
+			this.spnTotalDebit.EditValue = new decimal(new int[] {
+            565225,
+            0,
+            0,
+            196608});
+			this.spnTotalDebit.Location = new System.Drawing.Point(57, 199);
+			this.spnTotalDebit.MaximumSize = new System.Drawing.Size(200, 50);
+			this.spnTotalDebit.MinimumSize = new System.Drawing.Size(200, 50);
+			this.spnTotalDebit.Name = "spnTotalDebit";
+			this.spnTotalDebit.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+			this.spnTotalDebit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+			this.spnTotalDebit.Properties.Appearance.ForeColor = System.Drawing.Color.DarkBlue;
+			this.spnTotalDebit.Properties.Appearance.Options.UseBackColor = true;
+			this.spnTotalDebit.Properties.Appearance.Options.UseFont = true;
+			this.spnTotalDebit.Properties.Appearance.Options.UseForeColor = true;
+			this.spnTotalDebit.Properties.Appearance.Options.UseTextOptions = true;
+			this.spnTotalDebit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+			this.spnTotalDebit.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+			this.spnTotalDebit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, false, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+			this.spnTotalDebit.Properties.DisplayFormat.FormatString = "d2";
+			this.spnTotalDebit.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+			this.spnTotalDebit.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.spnTotalDebit.Size = new System.Drawing.Size(200, 50);
+			this.spnTotalDebit.StyleController = this.layoutControl1;
+			this.spnTotalDebit.TabIndex = 7;
 			// 
 			// btnRefresh2
 			// 
@@ -187,7 +245,7 @@
 			this.spnTotalNet.Properties.Appearance.Options.UseTextOptions = true;
 			this.spnTotalNet.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
 			this.spnTotalNet.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, false, false, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, false, false, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
 			this.spnTotalNet.Properties.ReadOnly = true;
 			this.spnTotalNet.Size = new System.Drawing.Size(200, 50);
 			this.spnTotalNet.StyleController = this.layoutControl1;
@@ -621,6 +679,40 @@
 			this.simpleSeparator7.Name = "simpleSeparator7";
 			this.simpleSeparator7.Size = new System.Drawing.Size(306, 2);
 			// 
+			// layoutControlItem13
+			// 
+			this.layoutControlItem13.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+			this.layoutControlItem13.AppearanceItemCaption.Options.UseFont = true;
+			this.layoutControlItem13.AppearanceItemCaption.Options.UseTextOptions = true;
+			this.layoutControlItem13.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+			this.layoutControlItem13.Control = this.spnTotalDebit;
+			this.layoutControlItem13.ControlAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+			this.layoutControlItem13.Location = new System.Drawing.Point(0, 0);
+			this.layoutControlItem13.Name = "layoutControlItem13";
+			this.layoutControlItem13.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
+			this.layoutControlItem13.Size = new System.Drawing.Size(306, 73);
+			this.layoutControlItem13.Spacing = new DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3);
+			this.layoutControlItem13.Text = "إجمالــي الحركــات المـدينـــــة";
+			this.layoutControlItem13.TextLocation = DevExpress.Utils.Locations.Top;
+			this.layoutControlItem13.TextSize = new System.Drawing.Size(166, 14);
+			// 
+			// layoutControlItem8
+			// 
+			this.layoutControlItem8.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+			this.layoutControlItem8.AppearanceItemCaption.Options.UseFont = true;
+			this.layoutControlItem8.AppearanceItemCaption.Options.UseTextOptions = true;
+			this.layoutControlItem8.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+			this.layoutControlItem8.Control = this.spnTotalCredit;
+			this.layoutControlItem8.ControlAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+			this.layoutControlItem8.Location = new System.Drawing.Point(0, 73);
+			this.layoutControlItem8.Name = "layoutControlItem8";
+			this.layoutControlItem8.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
+			this.layoutControlItem8.Size = new System.Drawing.Size(306, 73);
+			this.layoutControlItem8.Spacing = new DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3);
+			this.layoutControlItem8.Text = "إجمالــي الحركــات الــدائـــــة";
+			this.layoutControlItem8.TextLocation = DevExpress.Utils.Locations.Top;
+			this.layoutControlItem8.TextSize = new System.Drawing.Size(166, 14);
+			// 
 			// simpleSeparator1
 			// 
 			this.simpleSeparator1.AllowHotTrack = false;
@@ -663,98 +755,6 @@
 			this.simpleSeparator6.Name = "simpleSeparator6";
 			this.simpleSeparator6.Size = new System.Drawing.Size(2, 549);
 			// 
-			// spnTotalDebit
-			// 
-			this.spnTotalDebit.EditValue = new decimal(new int[] {
-            565225,
-            0,
-            0,
-            196608});
-			this.spnTotalDebit.Location = new System.Drawing.Point(57, 199);
-			this.spnTotalDebit.MaximumSize = new System.Drawing.Size(200, 50);
-			this.spnTotalDebit.MinimumSize = new System.Drawing.Size(200, 50);
-			this.spnTotalDebit.Name = "spnTotalDebit";
-			this.spnTotalDebit.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-			this.spnTotalDebit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-			this.spnTotalDebit.Properties.Appearance.ForeColor = System.Drawing.Color.DarkBlue;
-			this.spnTotalDebit.Properties.Appearance.Options.UseBackColor = true;
-			this.spnTotalDebit.Properties.Appearance.Options.UseFont = true;
-			this.spnTotalDebit.Properties.Appearance.Options.UseForeColor = true;
-			this.spnTotalDebit.Properties.Appearance.Options.UseTextOptions = true;
-			this.spnTotalDebit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-			this.spnTotalDebit.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-			this.spnTotalDebit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, false, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
-			this.spnTotalDebit.Properties.DisplayFormat.FormatString = "d2";
-			this.spnTotalDebit.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-			this.spnTotalDebit.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.spnTotalDebit.Size = new System.Drawing.Size(200, 50);
-			this.spnTotalDebit.StyleController = this.layoutControl1;
-			this.spnTotalDebit.TabIndex = 7;
-			// 
-			// layoutControlItem13
-			// 
-			this.layoutControlItem13.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-			this.layoutControlItem13.AppearanceItemCaption.Options.UseFont = true;
-			this.layoutControlItem13.AppearanceItemCaption.Options.UseTextOptions = true;
-			this.layoutControlItem13.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-			this.layoutControlItem13.Control = this.spnTotalDebit;
-			this.layoutControlItem13.ControlAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-			this.layoutControlItem13.Location = new System.Drawing.Point(0, 0);
-			this.layoutControlItem13.Name = "layoutControlItem13";
-			this.layoutControlItem13.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-			this.layoutControlItem13.Size = new System.Drawing.Size(306, 73);
-			this.layoutControlItem13.Spacing = new DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3);
-			this.layoutControlItem13.Text = "إجمالــي الحركــات المـدينـــــة";
-			this.layoutControlItem13.TextLocation = DevExpress.Utils.Locations.Top;
-			this.layoutControlItem13.TextSize = new System.Drawing.Size(166, 14);
-			// 
-			// spnTotalCredit
-			// 
-			this.spnTotalCredit.EditValue = new decimal(new int[] {
-            565225,
-            0,
-            0,
-            196608});
-			this.spnTotalCredit.Location = new System.Drawing.Point(57, 272);
-			this.spnTotalCredit.MaximumSize = new System.Drawing.Size(200, 50);
-			this.spnTotalCredit.MinimumSize = new System.Drawing.Size(200, 50);
-			this.spnTotalCredit.Name = "spnTotalCredit";
-			this.spnTotalCredit.Properties.Appearance.BackColor = System.Drawing.Color.Red;
-			this.spnTotalCredit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-			this.spnTotalCredit.Properties.Appearance.ForeColor = System.Drawing.Color.DarkBlue;
-			this.spnTotalCredit.Properties.Appearance.Options.UseBackColor = true;
-			this.spnTotalCredit.Properties.Appearance.Options.UseFont = true;
-			this.spnTotalCredit.Properties.Appearance.Options.UseForeColor = true;
-			this.spnTotalCredit.Properties.Appearance.Options.UseTextOptions = true;
-			this.spnTotalCredit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-			this.spnTotalCredit.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-			this.spnTotalCredit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, false, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject4, "", null, null, true)});
-			this.spnTotalCredit.Properties.DisplayFormat.FormatString = "d2";
-			this.spnTotalCredit.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-			this.spnTotalCredit.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.spnTotalCredit.Size = new System.Drawing.Size(200, 50);
-			this.spnTotalCredit.StyleController = this.layoutControl1;
-			this.spnTotalCredit.TabIndex = 8;
-			// 
-			// layoutControlItem8
-			// 
-			this.layoutControlItem8.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-			this.layoutControlItem8.AppearanceItemCaption.Options.UseFont = true;
-			this.layoutControlItem8.AppearanceItemCaption.Options.UseTextOptions = true;
-			this.layoutControlItem8.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-			this.layoutControlItem8.Control = this.spnTotalCredit;
-			this.layoutControlItem8.ControlAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-			this.layoutControlItem8.Location = new System.Drawing.Point(0, 73);
-			this.layoutControlItem8.Name = "layoutControlItem8";
-			this.layoutControlItem8.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-			this.layoutControlItem8.Size = new System.Drawing.Size(306, 73);
-			this.layoutControlItem8.Spacing = new DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3);
-			this.layoutControlItem8.Text = "إجمالــي الحركــات الــدائـــــة";
-			this.layoutControlItem8.TextLocation = DevExpress.Utils.Locations.Top;
-			this.layoutControlItem8.TextSize = new System.Drawing.Size(166, 14);
-			// 
 			// CashBoxTransactionContainer
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -766,6 +766,8 @@
 			this.Size = new System.Drawing.Size(1008, 549);
 			((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
 			this.layoutControl1.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.spnTotalCredit.Properties)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.spnTotalDebit.Properties)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.spnTotalNet.Properties)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dtDate.Properties)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtCashBoxName.Properties)).EndInit();
@@ -790,16 +792,14 @@
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.simpleSeparator7)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.simpleSeparator1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.simpleSeparator2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.simpleSeparator3)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.simpleSeparator4)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.simpleSeparator5)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.simpleSeparator6)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.spnTotalDebit.Properties)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.spnTotalCredit.Properties)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
 			this.ResumeLayout(false);
 
 		}

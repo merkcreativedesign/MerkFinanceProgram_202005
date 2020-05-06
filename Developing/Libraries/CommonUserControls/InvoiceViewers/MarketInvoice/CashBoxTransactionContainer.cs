@@ -99,7 +99,7 @@ namespace CommonUserControls.InvoiceViewers.MarketInvoice
 						FinancialBusinessLogicLibrary.CashBoxBalanceType.AllCreditOnly).ToString();
 				spnTotalNet.EditValue =
 					(FinancialBusinessLogicLibrary.GetCashBoxBalance(ApplicationStaticConfiguration.ActiveCashBox,
-						 FinancialBusinessLogicLibrary.CashBoxBalanceType.AllDebitOnly) -
+						 FinancialBusinessLogicLibrary.CashBoxBalanceType.AllDebitOnly) +
 					 FinancialBusinessLogicLibrary.GetCashBoxBalance(ApplicationStaticConfiguration.ActiveCashBox,
 						 FinancialBusinessLogicLibrary.CashBoxBalanceType.AllCreditOnly));
 			}

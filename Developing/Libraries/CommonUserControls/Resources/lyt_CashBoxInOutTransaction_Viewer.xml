@@ -2119,10 +2119,16 @@
     </property>
     <property name="Item24" isnull="true" iskey="true">
       <property name="AppearanceItemCaption" isnull="true" iskey="true">
+        <property name="Options" isnull="true" iskey="true">
+          <property name="UseTextOptions">true</property>
+        </property>
         <property name="ForeColor" />
         <property name="BorderColor" />
         <property name="BackColor" />
         <property name="BackColor2" />
+        <property name="TextOptions" isnull="true" iskey="true">
+          <property name="VAlignment">Center</property>
+        </property>
         <property name="Font">Tahoma, 8.25pt</property>
         <property name="FontSizeDelta">0</property>
         <property name="FontStyleDelta">Regular</property>
