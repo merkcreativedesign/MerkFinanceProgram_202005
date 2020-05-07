@@ -209,6 +209,12 @@
     <Compile Include="InvoiceViewers\MarketInvoice\CashBoxTransactionContainer.Designer.cs">
       <DependentUpon>CashBoxTransactionContainer.cs</DependentUpon>
     </Compile>
+    <Compile Include="InvoiceViewers\MarketInvoice\CashInOutTransaction_Viewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InvoiceViewers\MarketInvoice\CashInOutTransaction_Viewer.Designer.cs">
+      <DependentUpon>CashInOutTransaction_Viewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="InvoiceViewers\MarketInvoice\ChooseCashBox_UC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1453,6 +1459,9 @@
     <EmbeddedResource Include="InvoiceViewers\MarketInvoice\CashBoxTransactionContainer.resx">
       <DependentUpon>CashBoxTransactionContainer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InvoiceViewers\MarketInvoice\CashInOutTransaction_Viewer.resx">
+      <DependentUpon>CashInOutTransaction_Viewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InvoiceViewers\MarketInvoice\ChooseCashBox_UC.resx">
       <DependentUpon>ChooseCashBox_UC.cs</DependentUpon>
     </EmbeddedResource>
@@ -2402,6 +2411,8 @@
     <None Include="Resources\AddToLisT_066.png" />
     <None Include="Resources\AnteriorSegment_01.png" />
     <None Include="Resources\Adnexa_16_01.png" />
+    <None Include="Resources\AddToLisT_077.png" />
+    <None Include="Resources\AddToList_16_03.png" />
     <Content Include="Resources\BlackDim_Background_01.png" />
     <None Include="Resources\ConsumablesIcon_16_01.png" />
     <None Include="Resources\DoctorIcon_08_01.png" />

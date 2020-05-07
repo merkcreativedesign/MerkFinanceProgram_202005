@@ -123,6 +123,16 @@ namespace CommonUserControls.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AddToLisT_077 {
+            get {
+                object obj = ResourceManager.GetObject("AddToLisT_077", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AddToList_16_01 {
             get {
                 object obj = ResourceManager.GetObject("AddToList_16_01", resourceCulture);
@@ -136,6 +146,16 @@ namespace CommonUserControls.Properties {
         internal static System.Drawing.Bitmap AddToList_16_02 {
             get {
                 object obj = ResourceManager.GetObject("AddToList_16_02", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AddToList_16_03 {
+            get {
+                object obj = ResourceManager.GetObject("AddToList_16_03", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
