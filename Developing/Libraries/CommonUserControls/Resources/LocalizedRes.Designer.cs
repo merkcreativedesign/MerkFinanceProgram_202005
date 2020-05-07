@@ -2207,6 +2207,23 @@ namespace CommonUserControls.Resources {
         ///    &lt;property name=&quot;AllowFocusGroups&quot;&gt;true&lt;/property&gt;
         ///    &lt;property name=&quot;Allow [rest of string was truncated]&quot;;.
         /// </summary>
+        internal static string lyt_CashBoxInOutTransaction_EditorViewer {
+            get {
+                return ResourceManager.GetString("lyt_CashBoxInOutTransaction_EditorViewer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;XtraSerializer version=&quot;1.0&quot; application=&quot;LayoutControl&quot;&gt;
+        ///  &lt;property name=&quot;#LayoutVersion&quot; /&gt;
+        ///  &lt;property name=&quot;OptionsFocus&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;
+        ///    &lt;property name=&quot;ActivateSelectedControlOnGotFocus&quot;&gt;true&lt;/property&gt;
+        ///    &lt;property name=&quot;AllowFocusControlOnLabelClick&quot;&gt;false&lt;/property&gt;
+        ///    &lt;property name=&quot;EnableAutoTabOrder&quot;&gt;true&lt;/property&gt;
+        ///    &lt;property name=&quot;AllowFocusControlOnActivatedTabPage&quot;&gt;false&lt;/property&gt;
+        ///    &lt;property name=&quot;AllowFocusGroups&quot;&gt;true&lt;/property&gt;
+        ///    &lt;property name=&quot;Allow [rest of string was truncated]&quot;;.
+        /// </summary>
         internal static string lyt_CashBoxInOutTransaction_Viewer {
             get {
                 return ResourceManager.GetString("lyt_CashBoxInOutTransaction_Viewer", resourceCulture);

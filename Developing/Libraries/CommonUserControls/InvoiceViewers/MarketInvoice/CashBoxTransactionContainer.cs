@@ -5,13 +5,12 @@ using MerkDataBaseBusinessLogicProject;
 using MerkDataBaseBusinessLogicProject.EntitiesOperationsBusinessLogicLibrary;
 using MVCBusinessLogicLibrary.BaseViewers;
 using MVCBusinessLogicLibrary.MVCFactories;
-using Application = DevExpress.XtraRichEdit.API.Word.Application;
 
 namespace CommonUserControls.InvoiceViewers.MarketInvoice
 {
 	public partial class CashBoxTransactionContainer : UserControl
 	{
-		private DailyTransactions_UC dailyTransactions;
+		private CashInOutTransaction_Viewer _cashInOutTransactionViewer;
 
 		public CashBoxTransactionContainer()
 		{
@@ -37,15 +36,9 @@ namespace CommonUserControls.InvoiceViewers.MarketInvoice
 			SetCashBoxDetails();
 
 			if (ApplicationStaticConfiguration.ActiveCashBox != null)
-				BaseController<CashBoxInOutTransaction>.ShowEditorControl(ref dailyTransactions,
-					this,
-					null,
-					null,
-					EditorContainerType.Regular,
-					ViewerName.CashBoxInOutTrasactionViewer,
-					DB_CommonTransactionType.CreateNew,
-					"المعـامـــــلات اليـوميـــــــة",
-					true);
+				BaseController<CashBoxInOutTransaction>.ShowEditorControl(ref _cashInOutTransactionViewer, this, null,
+					null, EditorContainerType.Regular, ViewerName.CashBoxInOutTrasactionViewer,
+					DB_CommonTransactionType.CreateNew, "المعـامـــــلات اليـوميـــــــة", true);
 
 			SetCashBoxDetails();
 		}

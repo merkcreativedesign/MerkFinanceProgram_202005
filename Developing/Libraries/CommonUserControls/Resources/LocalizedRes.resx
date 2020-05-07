@@ -874,4 +874,7 @@
   <data name="lyt_ChooseCashBox" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>lyt_ChooseCashBox.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="lyt_CashBoxInOutTransaction_EditorViewer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>lyt_CashBoxInOutTransaction_EditorViewer.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

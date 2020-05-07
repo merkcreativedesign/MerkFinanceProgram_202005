@@ -221,12 +221,6 @@
     <Compile Include="InvoiceViewers\MarketInvoice\ChooseCashBox_UC.Designer.cs">
       <DependentUpon>ChooseCashBox_UC.cs</DependentUpon>
     </Compile>
-    <Compile Include="InvoiceViewers\MarketInvoice\DailyTransactions_UC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="InvoiceViewers\MarketInvoice\DailyTransactions_UC.Designer.cs">
-      <DependentUpon>DailyTransactions_UC.cs</DependentUpon>
-    </Compile>
     <Compile Include="InvoiceViewers\MarketInvoice\MarketCreationFinanceInvoice_UC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1464,9 +1458,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InvoiceViewers\MarketInvoice\ChooseCashBox_UC.resx">
       <DependentUpon>ChooseCashBox_UC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InvoiceViewers\MarketInvoice\DailyTransactions_UC.resx">
-      <DependentUpon>DailyTransactions_UC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InvoiceViewers\MarketInvoice\MarketCreationFinanceInvoice_UC.resx">
       <DependentUpon>MarketCreationFinanceInvoice_UC.cs</DependentUpon>
