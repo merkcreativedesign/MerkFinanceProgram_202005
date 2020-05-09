@@ -247,15 +247,6 @@
 		MerkFinance = 11,
 	}
 
-	public enum DB_GeneralChartOfAccountType
-	{
-		None = 0,
-		ExpensesWithdraw = 1,
-		ReverseExpensesWithdraw = 2,
-		RevenueDeposit = 3,
-		ReverseRevenueDeposit = 4
-	}
-
 	public enum DB_ChartOfAccountCodeMargin
 	{
 		None = 0,

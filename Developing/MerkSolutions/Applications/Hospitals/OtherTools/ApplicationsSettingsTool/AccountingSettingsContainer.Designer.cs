@@ -34,7 +34,7 @@
 			this.btnInventoryItemPrice = new DevExpress.XtraNavBar.NavBarItem();
 			this.btnInventoryItem = new DevExpress.XtraNavBar.NavBarItem();
 			this.btnInventoryItemGroup_InventoryItem = new DevExpress.XtraNavBar.NavBarItem();
-			this.btnInventoryItemUnitMeasurment = new DevExpress.XtraNavBar.NavBarItem();
+			this.btnCashBoxBoxTransactionType_GeneralChartOfAccount = new DevExpress.XtraNavBar.NavBarItem();
 			this.btnPersonChartOfAccount = new DevExpress.XtraNavBar.NavBarItem();
 			this.btnPersonTypeChartOfAccount = new DevExpress.XtraNavBar.NavBarItem();
 			this.btnGeneralChartOfAccountType = new DevExpress.XtraNavBar.NavBarItem();
@@ -111,19 +111,19 @@
 			this.btnInventoryItemGroup_InventoryItem.Name = "btnInventoryItemGroup_InventoryItem";
 			this.btnInventoryItemGroup_InventoryItem.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnInventoryItemGroup_InventoryItem.SmallImage")));
 			// 
-			// btnInventoryItemUnitMeasurment
+			// btnCashBoxBoxTransactionType_GeneralChartOfAccount
 			// 
-			this.btnInventoryItemUnitMeasurment.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-			this.btnInventoryItemUnitMeasurment.Appearance.Options.UseFont = true;
-			this.btnInventoryItemUnitMeasurment.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-			this.btnInventoryItemUnitMeasurment.AppearanceDisabled.Options.UseFont = true;
-			this.btnInventoryItemUnitMeasurment.AppearanceHotTracked.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-			this.btnInventoryItemUnitMeasurment.AppearanceHotTracked.Options.UseFont = true;
-			this.btnInventoryItemUnitMeasurment.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-			this.btnInventoryItemUnitMeasurment.AppearancePressed.Options.UseFont = true;
-			this.btnInventoryItemUnitMeasurment.Caption = "----";
-			this.btnInventoryItemUnitMeasurment.Name = "btnInventoryItemUnitMeasurment";
-			this.btnInventoryItemUnitMeasurment.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnInventoryItemUnitMeasurment.SmallImage")));
+			this.btnCashBoxBoxTransactionType_GeneralChartOfAccount.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+			this.btnCashBoxBoxTransactionType_GeneralChartOfAccount.Appearance.Options.UseFont = true;
+			this.btnCashBoxBoxTransactionType_GeneralChartOfAccount.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+			this.btnCashBoxBoxTransactionType_GeneralChartOfAccount.AppearanceDisabled.Options.UseFont = true;
+			this.btnCashBoxBoxTransactionType_GeneralChartOfAccount.AppearanceHotTracked.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+			this.btnCashBoxBoxTransactionType_GeneralChartOfAccount.AppearanceHotTracked.Options.UseFont = true;
+			this.btnCashBoxBoxTransactionType_GeneralChartOfAccount.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+			this.btnCashBoxBoxTransactionType_GeneralChartOfAccount.AppearancePressed.Options.UseFont = true;
+			this.btnCashBoxBoxTransactionType_GeneralChartOfAccount.Caption = "ربـط أنـواع المعـامـــلات المـاليـــة بالخـزائـــــن";
+			this.btnCashBoxBoxTransactionType_GeneralChartOfAccount.Name = "btnCashBoxBoxTransactionType_GeneralChartOfAccount";
+			this.btnCashBoxBoxTransactionType_GeneralChartOfAccount.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnCashBoxBoxTransactionType_GeneralChartOfAccount.SmallImage")));
 			// 
 			// btnPersonChartOfAccount
 			// 
@@ -216,11 +216,11 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.btnChartOfAccount),
             new DevExpress.XtraNavBar.NavBarItemLink(this.btnGeneralChartOfAccountType),
             new DevExpress.XtraNavBar.NavBarItemLink(this.btnCashBox),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.btnCashBoxBoxTransactionType_GeneralChartOfAccount),
             new DevExpress.XtraNavBar.NavBarItemLink(this.btnBank),
             new DevExpress.XtraNavBar.NavBarItemLink(this.btnBankAccount),
             new DevExpress.XtraNavBar.NavBarItemLink(this.btnPersonTypeChartOfAccount),
             new DevExpress.XtraNavBar.NavBarItemLink(this.btnPersonChartOfAccount),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.btnInventoryItemUnitMeasurment),
             new DevExpress.XtraNavBar.NavBarItemLink(this.btnInventoryItemGroup_InventoryItem),
             new DevExpress.XtraNavBar.NavBarItemLink(this.btnInventoryItem),
             new DevExpress.XtraNavBar.NavBarItemLink(this.btnInventoryItemPrice),
@@ -279,7 +279,7 @@
             this.btnInventoryItemGroup_InventoryItem,
             this.btnPersonTypeChartOfAccount,
             this.btnPersonChartOfAccount,
-            this.btnInventoryItemUnitMeasurment,
+            this.btnCashBoxBoxTransactionType_GeneralChartOfAccount,
             this.btnInventoryItemPrice,
             this.btnInventoryItem_InventoryHousing,
             this.btnBank,
@@ -335,7 +335,7 @@
 		private DevExpress.XtraNavBar.NavBarItem btnInventoryItemPrice;
 		private DevExpress.XtraNavBar.NavBarItem btnInventoryItem;
 		private DevExpress.XtraNavBar.NavBarItem btnInventoryItemGroup_InventoryItem;
-		private DevExpress.XtraNavBar.NavBarItem btnInventoryItemUnitMeasurment;
+		private DevExpress.XtraNavBar.NavBarItem btnCashBoxBoxTransactionType_GeneralChartOfAccount;
 		private DevExpress.XtraNavBar.NavBarItem btnPersonChartOfAccount;
 		private DevExpress.XtraNavBar.NavBarItem btnPersonTypeChartOfAccount;
 		private DevExpress.XtraNavBar.NavBarItem btnGeneralChartOfAccountType;

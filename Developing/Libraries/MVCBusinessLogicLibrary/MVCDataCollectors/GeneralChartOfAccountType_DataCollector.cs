@@ -179,8 +179,8 @@ namespace MVCBusinessLogicLibrary.MVCDataCollectors
 
 			chartOfAccountGeneralChartOfAccount.SaveChanges();
 
-			DB_GeneralChartOfAccountType privateGeneralChartOfAccountType =
-				(DB_GeneralChartOfAccountType) generalChartOfAccountType.GeneralChartOfAccountType_P_ID;
+			DB_CashBoxTransactionType privateGeneralChartOfAccountType =
+				(DB_CashBoxTransactionType)generalChartOfAccountType.GeneralChartOfAccountType_P_ID;
 			List<CashBoxTransactionType_GeneralChartOfAccountType_p> privateList =
 				CashBoxTransactionType_GeneralChartOfAccountType_p.ItemsList.FindAll(
 					item =>

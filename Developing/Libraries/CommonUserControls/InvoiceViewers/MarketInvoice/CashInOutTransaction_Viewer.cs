@@ -51,6 +51,8 @@ namespace CommonUserControls.InvoiceViewers.MarketInvoice
 
 		public override void FillControls()
 		{
+			CommonViewsActions.FillGridlookupEdit(lkeGeneralChartOfAccount, GeneralChartOfAccountType_cu.ItemsList);
+
 			chkExpenses.Checked = true;
 			dtInvoiceCreation.DateTime = DateTime.Now;
 			spnAmount.EditValue = 0;
@@ -267,6 +269,8 @@ namespace CommonUserControls.InvoiceViewers.MarketInvoice
 			txtSerial.Text =
 				FinancialBusinessLogicLibrary.GetNextCashBoxInOutTransactionSerial(FinancialBusinessLogicLibrary.SerialType
 					.CashBoxTransactionInOutExpenses, listToBeViewedOnly);
+
+			//List<>
 		}
 
 		private void chkReverseExpenses_CheckedChanged(object sender, EventArgs e)
